@@ -1,0 +1,73 @@
+{
+  "name": "availity-toolkit",
+  "version": "0.0.1",
+  "description": "Toolkit for Angular apps on the Availity platform.",
+  "private": true,
+  "author": "Robert McGuinness <rob.mcguinness@availity.com>",
+  "engines": {
+    "node": ">=0.10.x"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:Availity/availity-toolkit.git"
+  },
+  "authors": [
+    {
+      "name": "Robert McGuinness",
+      "email": "rob.mcguinness@availity.com"
+    },
+    {
+      "name": "Robert Warner",
+      "email": "rob.warner@availity.com"
+    }
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "availity-ekko": "git+ssh://git@github.com:Availity/availity-ekko.git#v0.0.3",
+    "bower-webpack-plugin": "^0.1.6",
+    "browser-sync": "^2.0.1",
+    "chalk": "^0.5.1",
+    "css-loader": "^0.9.1",
+    "del": "^1.1.1",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.6.0",
+    "extract-text-webpack-plugin": "^0.3.8",
+    "file-loader": "^0.8.1",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-bump": "^0.1.11",
+    "gulp-filter": "^2.0.1",
+    "gulp-git": "^0.5.2",
+    "gulp-if": "^1.2.5",
+    "gulp-insert": "^0.4.0",
+    "gulp-jscs": "^1.2.1",
+    "gulp-jshint": "^1.8.5",
+    "gulp-less": "^3.0.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-tag-version": "^1.1.0",
+    "gulp-uglify": "^1.0.2",
+    "gulp-using": "0.0.1",
+    "gulp-util": "^3.0.3",
+    "gulp-verb": "^0.3.0",
+    "gulp-webpack": "^1.1.2",
+    "imports-loader": "^0.6.3",
+    "jshint-stylish": "^1.0.0",
+    "json-loader": "^0.5.1",
+    "lodash": "^3.1.0",
+    "minimist": "^1.1.0",
+    "ng-cache-loader": "0.0.8",
+    "proxy-middleware": "^0.11.0",
+    "require-dir": "^0.1.0",
+    "style-loader": "^0.8.3",
+    "url-loader": "^0.5.5",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^1.5.3"
+  }
+}

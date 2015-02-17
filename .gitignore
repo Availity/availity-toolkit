@@ -1,0 +1,13 @@
+/node_modules/
+.gradle
+.idea
+/bower_components/
+/coverage-reports/
+.DS_Store
+/dist/
+/web/js/
+/web/css/
+
+/build/
+
+/css/
