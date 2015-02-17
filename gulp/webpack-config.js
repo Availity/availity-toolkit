@@ -36,13 +36,13 @@ var config = {
     loaders: [
 
       // Shims for for libs that are not CommonJs or AMD.
-      { test: /[\/]angular\.js$/, loader: 'expose?angular!exports?angular' }, // export angular so we can do `var angular = require('angular')`
+      { test: /[\\\/]angular\.js$/, loader: 'expose?angular!exports?angular' }, // export angular so we can do `var angular = require('angular')`
 
-      { test: /[\/]jquery\.js$/, loader: 'expose?$!expose?jQuery' }, // export jQuery and $ to global scope.
+      { test: /[\\\/]jquery\.js$/, loader: 'expose?$!expose?jQuery' }, // export jQuery and $ to global scope.
 
-      { test: /[\/]lodash\.js$/, loader: 'expose?_' }, // export jQuery and $ to global scope.
+      { test: /[\\\/]lodash\.js$/, loader: 'expose?_' }, // export jQuery and $ to global scope.
 
-      { test: /[\/]moment\.js$/, loader: 'expose?moment' },
+      { test: /[\\\/]moment\.js$/, loader: 'expose?moment' },
 
       // Extract related CSS for each bundle
       {
