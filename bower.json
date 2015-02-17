@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "availity-angular-sdk": "ssh://git@github.com:Availity/availity-angular.git#v0.2.0"
+    "availity-angular-sdk": "git@github.com:Availity/availity-angular.git#v0.2.1"
   },
   "homepage": "https://github.com/availity/availity-toolkit",
   "keywords": [
