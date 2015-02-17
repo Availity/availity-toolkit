@@ -28,7 +28,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "availity-ekko": "git+ssh://git@github.com:Availity/availity-ekko.git#v0.0.3",
+    "availity-ekko": "Availity/availity-ekko.git#v0.0.3",
     "bower-webpack-plugin": "^0.1.6",
     "browser-sync": "^2.0.1",
     "chalk": "^0.5.1",
