@@ -15,7 +15,7 @@ require('angular-sanitize');
 require('angular-ui-router');
 
 // availity
-require('availity-angular-sdk');
+require('availity-angular');
 
 // images
 require("availity-uikit/dist/images/logo-availity.png");

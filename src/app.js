@@ -2,7 +2,7 @@
 
 require('jquery');
 require('angular');
-require('availity-angular-sdk');
+require('availity-angular');
 
 var app = require('./module');
 var registration = require('./registration/index');
