@@ -4,7 +4,7 @@ var argv = require('minimist')(process.argv.slice(2));
 module.exports = {
   args: {
     verbose: !!argv.verbose,
-    environment: argv.env || 'development'
+    environment: process.env.NODE_ENV || 'development'
   },
   project: {
     path: path.resolve(__dirname, '..')
