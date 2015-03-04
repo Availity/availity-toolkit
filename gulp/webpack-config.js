@@ -15,8 +15,8 @@ var config = {
     pathinfo: DEBUG
   },
   debug: DEBUG,
-  cache: true,
-  watch: true,
+  cache: DEBUG,
+  watch: DEBUG,
   devtool: 'source-map',
   noParse: [
     /select2.*\.js/,
