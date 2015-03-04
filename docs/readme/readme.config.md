@@ -8,14 +8,14 @@
 ## Intro
 {%= docs("intro") %}
 
-## Authors
-{%= docs("authors") %}
-
 ## Projects
 {%= docs("projects") %}
 
 ## Working with the Toolkit
 {%= docs("working") %}
+
+## Authors
+{%= docs("authors") %}
 
 ## License
 Copyright (c) {%= date('YYYY') %} Availity, LLC
