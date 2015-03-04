@@ -36,6 +36,10 @@ gulp.task('build:prod', function() {
   var filter = require('gulp-filter')('**/*.js');
   var uglify = require('gulp-uglify');
 
+  webpackConfig.debug =  false;
+  webpackConfig.cache =  false;
+  webpackConfig.watch =  false;
+
   return gulp.src(config.app.src)
     .pipe(gWebpack(webpackConfig))
     .pipe(filter) // Minify only the JavaScript, not the map
