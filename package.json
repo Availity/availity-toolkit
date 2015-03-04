@@ -28,7 +28,7 @@
   },
 
   "devDependencies": {
-    "availity-ekko": "0.0.4",
+    "availity-ekko": "^0.0.5",
     "bower-webpack-plugin": "^0.1.6",
     "browser-sync": "^2.0.1",
     "chalk": "^0.5.1",
