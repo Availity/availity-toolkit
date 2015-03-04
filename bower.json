@@ -2,10 +2,9 @@
   "name": "availity-toolkit",
   "version": "0.0.1",
   "description": "Toolkit for Angular apps on the Availity platform.",
-  "private": true,
   "license": "MIT",
   "dependencies": {
-    "availity-angular-sdk": "Availity/availity-angular#v0.2.2"
+    "availity-angular": "~0.3.0"
   },
   "homepage": "https://github.com/availity/availity-toolkit",
   "keywords": [
