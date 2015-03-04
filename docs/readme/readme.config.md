@@ -8,9 +8,6 @@
 ## Intro
 {%= docs("intro") %}
 
-## Projects
-{%= docs("projects") %}
-
 ## Working with the Toolkit
 {%= docs("working") %}
 

@@ -4,23 +4,12 @@
 
 ## Table of Contents
 * [Intro](#intro)
-* [Projects](#projects)
 * [Working with the Toolkit](#working-with-the-toolkit)
 * [Authors](#authors)
 * [License](#license)
 
 
 ## Intro
-Inspired by [gulp-starter](https://github.com/greypants/gulp-starter). Availity Gulp project contains some common patterns established when creating Node.js powered projects that use Gulp.
-
-* Auto-generating README.md
-* Mocha tests and coverage reports
-* Individual Gulp tasks for easier project maintenance
-* BrowserSync
-* Dotfiles sync
-* JavaScript Code Style checker
-
-## Projects
 The Availity Toolkit assembles several Availity projects that make developing for the Availity platform easier. These projects include:
 
 * [Availity Angular SDK](https://github.com/Availity/availity-angular)
