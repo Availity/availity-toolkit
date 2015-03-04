@@ -26,9 +26,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install"
   },
-  "dependencies": {},
+
   "devDependencies": {
-    "availity-ekko": "Availity/availity-ekko.git#v0.0.3",
+    "availity-ekko": "0.0.4",
     "bower-webpack-plugin": "^0.1.6",
     "browser-sync": "^2.0.1",
     "chalk": "^0.5.1",
