@@ -8,6 +8,9 @@
 ## Intro
 {%= docs("intro") %}
 
+## Folder Structure
+{%= docs("structure") %}
+
 ## Working with the Toolkit
 {%= docs("working") %}
 
