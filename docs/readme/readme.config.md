@@ -11,6 +11,9 @@
 ## Working with the Toolkit
 {%= docs("working") %}
 
+## Supported Browsers
+{%= docs("supported") %}
+
 ## Authors
 {%= docs("authors") %}
 
