@@ -4,7 +4,7 @@ require('bootstrap');
 require('availity-uikit');
 require('select2');
 require('velocity');
-require('eonasdan-bootstrap-datetimepicker');
+require('bootstrap-datepicker');
 
 // utils
 require('lodash');
