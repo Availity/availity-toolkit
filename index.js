@@ -1,7 +1,6 @@
-var path = require('path');
 var Ekko = require('availity-ekko');
 
-var configPath = path.join(__dirname, 'config.js');
+var developerConfig = require('./developer-config');
 
-var ekko = new Ekko(configPath);
-ekko.start();
+var ekko = new Ekko();
+ekko.start(developerConfig);

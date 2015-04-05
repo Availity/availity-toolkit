@@ -1,6 +1,18 @@
 var path = require('path');
+var config = require('./gulp/config');
 
-var config = {
+var developerConfig = {
+
+  development: {
+    data: path.join(config.project.path, '/data'),
+    routes: path.join(config.project.path, './routes.json'),
+    servers: {
+      web: {
+        host: '0.0.0.0',
+        port: 9999
+      }
+    }
+  },
 
   production: {
     latency: 300,
@@ -20,4 +32,4 @@ var config = {
 
 };
 
-module.exports = config;
+module.exports = developerConfig;

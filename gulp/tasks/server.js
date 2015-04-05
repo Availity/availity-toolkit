@@ -1,33 +1,28 @@
 var gulp = require('gulp');
-var path = require('path');
-var Ekko = require('availity-ekko');
 var proxy = require('proxy-middleware');
 var _ = require('lodash');
 var chalk = require('chalk');
 var dateformat = require('dateformat');
 var proxy = require('proxy-middleware');
-
+var nodemon = require('gulp-nodemon');
 var _ = require('lodash');
-
+var path = require('path');
 var config = require('../config');
 
-var servers = {
-  web: {
-    host: '0.0.0.0',
-    port: 9999
-  }
-};
+var developerConfig = require('../../developer-config');
 
 gulp.task('server', ['server:rest', 'server:sync']);
 
 gulp.task('server:rest', function () {
-  var ekko = new Ekko();
-  return ekko.start({
-    development: {
-      data: path.join(config.project.path, '/data'),
-      routes: path.join(config.project.path, './routes.json'),
-      servers: servers
-    }
+  nodemon({
+    script: 'index.js',
+    ext: 'json',
+    ignore: ['js', 'html', 'less'],
+    watch: [path.join(config.project.path, 'routes.json')],
+    env: { 'NODE_ENV': 'development' },
+    nodeArgs: ['--debug']
+  }).on('restart', function () {
+    console.log('server restarted!');
   });
 });
 
@@ -49,7 +44,7 @@ gulp.task('server:sync', ['server:rest'], function() {
   //
   // }
   var _url = _.template('http://localhost:<%= port %>/');
-  var proxyOptions = url.parse(_url({port: servers.web.port}));
+  var proxyOptions = url.parse(_url({port: developerConfig.development.servers.web.port}));
   proxyOptions.route = '/api';
 
   browserSync({
