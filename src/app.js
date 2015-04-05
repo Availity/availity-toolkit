@@ -22,6 +22,8 @@ app.controller('PageController', function($scope, AvModal) {
     date: null,
     states: [
       { id: 'AL', name: 'Alabama' },
+      { id: 'AL', name: 'Georgia' },
+      { id: 'UT', name: 'Utah' },
       { id: 'CA', name: 'California' },
       { id: 'NM', name: 'New Mexico' },
       { id: 'TX', name: 'Texas' },
@@ -44,7 +46,7 @@ app.controller('PageController', function($scope, AvModal) {
 
 app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
 
-  avValProvider.addRules({
+  var defaultRules = {
     'name': {
       'required': {
         'message': 'Your name is required.'
@@ -64,6 +66,10 @@ app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
         'message': 'Format needs to be MM/DD/YYYY'
       }
     }
+  };
+
+  avValProvider.addRules({
+    'default': defaultRules
   });
 
   $stateProvider

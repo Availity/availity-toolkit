@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var webpack = require('webpack');
 var gWebpack = require('gulp-webpack');
 var rename = require('gulp-rename');
+var gUtil = require('gulp-util');
+var gulpif = require('gulp-if');
+var using = require('gulp-using');
 var browserSync = require('browser-sync');
 var named = require('vinyl-named');
 
@@ -14,20 +17,12 @@ gulp.task('build:dev', function() {
   var filter = require('gulp-filter')('**/*.{css,js}');
   return gulp.src([config.app.src, config.vendor.src])
     .pipe(named())
-    .pipe(gWebpack(webpackConfig, webpack, function(error, stats) {
-
-      var _stats = stats.toString({
-        colors: true,
-        reasons: true,
-        cached: true,
-        source: false,
-        chunks: false
-      });
-
-      console.log('Webpack debug:\n\n', _stats);
+    .pipe(gWebpack(webpackConfig, webpack, function() {
+      gUtil.log('webpack build completed');
     }))
     .pipe(gulp.dest(config.app.dest))
-    .pipe(filter) // only reload css and js files
+    .pipe(filter) // only reload certain assets
+    .pipe(gulpif(config.args.verbose, using({prefix:'Task [build:dev] using'})))
     .pipe(browserSync.reload({stream: true}));
 });
 

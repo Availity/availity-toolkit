@@ -4,6 +4,9 @@ var Ekko = require('availity-ekko');
 var proxy = require('proxy-middleware');
 var _ = require('lodash');
 
+var proxy = require('proxy-middleware');
+var _ = require('lodash');
+
 var config = require('../config');
 
 var servers = {
@@ -12,6 +15,8 @@ var servers = {
     port: 9999
   }
 };
+
+gulp.task('server', ['server:rest', 'server:sync']);
 
 gulp.task('server:rest', function () {
   var ekko = new Ekko();

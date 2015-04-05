@@ -5,5 +5,6 @@ gulp.task('default', [
   'copy',
   'build',
   'server:sync',
-  'watch'
+  'watch',
+  'server'
 ]);

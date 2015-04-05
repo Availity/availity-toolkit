@@ -5,54 +5,42 @@ var BowerWebpackPlugin = require('bower-webpack-plugin');
 
 var config = require('./config');
 
-var appRoot = path.join(config.project.path, '/src');
-
-var DEBUG = config.args.environment === 'development';
+// var DEBUG = config.args.environment === 'development';
+var DEBUG = true;
 
 var config = {
   output: {
+    path: path.join(config.project.path,  'build'),
     filename: '[name].js',
-    pathinfo: DEBUG
+    chunkFilename: '[name]-[id]-bundle.js',
+    pathinfo: DEBUG,
   },
   debug: DEBUG,
   cache: DEBUG,
   watch: DEBUG,
-  devtool: 'source-map',
+  devtool: '#eval-source-map',
   noParse: [
     /select2.*\.js/,
-    /.*angular.*\.js/
+    /.*angular.*\.js/,
+    /.*lodash.*\.js/,
+    /.*moment.*\.js/,
+    /.*bootstrap.*\.js/,
+    /.*velocity.*\.js/,
   ],
   resolve: {
-    root: [appRoot],
+    root: [path.join(config.project.path, '/src')],
     modulesDirectories: ['bower_components', 'node_modules'],
-    extensions: [
-      '',
-      '.js',
-      '.json'
-    ]
+    extensions: ['', '.js', '.json']
   },
-
   module:  {
     loaders: [
-
-      // Shims for for libs that are not CommonJs or AMD.
       { test: /[\\\/]angular\.js$/, loader: 'expose?angular!exports?angular' }, // export angular so we can do `var angular = require('angular')`
-
       { test: /[\\\/]jquery\.js$/, loader: 'expose?$!expose?jQuery' }, // export jQuery and $ to global scope.
-
       { test: /[\\\/]lodash\.js$/, loader: 'expose?_' }, // export jQuery and $ to global scope.
-
       { test: /[\\\/]moment\.js$/, loader: 'expose?moment' },
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', { publicPath: '../' } ) },
+      {test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader?sourceMap') },
 
-      // Extract related CSS for each bundle
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader',
-          { publicPath: '../' }
-        )
-      },
       {
         // test should match the following:
         //
@@ -62,17 +50,8 @@ var config = {
         test: /\.(ttf|woff|eot|svg).*/,
         loader: 'file?name=fonts/[name].[ext]'
       },
-
-      {
-        test:/\.(\.jpe?g|png|gif)$/,
-        loader: 'file?name=images/[name].[ext]'
-      },
-
-      {
-        test: /\.html$/,
-        loader: 'ng-cache?prefix=[dir]/[dir]'
-      }
-    ]
+      {test:/\.(\.jpe?g|png|gif)$/, loader: 'file?name=images/[name].[ext]'},
+      {test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]'} ]
   },
   plugins: [
 
@@ -86,7 +65,6 @@ var config = {
       'window.jQuery': 'jquery'
     }),
 
-    // Look in bower main files.
     new BowerWebpackPlugin({
       excludes:  [
         /.*\.(less|map)/,
@@ -97,7 +75,9 @@ var config = {
     }),
 
     // Use bundle name for extracting bundle css
-    new ExtractTextPlugin('css/[name].css')
+    new ExtractTextPlugin('css/[name].css', {
+      allChunks: true
+    })
   ]
 };
 
