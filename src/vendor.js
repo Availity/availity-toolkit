@@ -4,6 +4,7 @@ require('bootstrap');
 require('availity-uikit');
 require('select2');
 require('velocity');
+require('moment');
 require('bootstrap-datepicker');
 
 // utils
