@@ -2,7 +2,7 @@
 
   <h1 class="page-title">Welcome</h1>
 
-  <form class="form" data-av-val-form="default">
+  <form class="form" name="demoForm" data-av-val-form="default">
     <div class="panel panel-card">
       <div class="panel-body">
         <div class="row">
@@ -70,7 +70,7 @@
         data-ng-click="reg.onShow()">
         Show
       </button>
-      <input type="submit" class="btn btn-primary form-controls-right" value="Next">
+      <input type="submit" class="btn btn-primary form-controls-right" data-ng-disabled="demoForm.$invalid" value="Next">
     </div>
   </div>
 
