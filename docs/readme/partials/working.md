@@ -58,21 +58,6 @@ gulp build
 
 Builds your latest code for development.
 
-#### Bump
-
->
-```sh
-gulp bump
-```
-
-Bumps the version number of your code using [Semantic Versioning](http://semver.org/). You must specify whether to bump the major, minor, or patch version number:
-
->
-```sh
-gulp bump:major
-gulp bump:minor
-gulp bump:patch
-```
 
 #### Dist
 
@@ -82,13 +67,6 @@ gulp dist
 ```
 
 Packages your code for distribution.
-
-#### Dotfiles
-
->
-```sh
-gulp dotfiles
-```
 
 Pulls down the latest Availity configuration files from the Availity Git repository.
 
@@ -129,16 +107,16 @@ gulp readme
 
 Creates this README file.
 
-#### Server:Rest
+#### Rest Server
 
 >
 ```sh
 gulp server:rest
 ```
 
-Starts the Availity Ekko server, which is a REST mock server that the Availity Toolkit provides.
+Starts the Availity Ekko server, which is a REST mock server that the Availity Ekko module provides.
 
-#### Server:Sync
+#### Server Sync
 
 >
 ```sh
