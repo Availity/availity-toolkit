@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var webpack = require('webpack');
 var gWebpack = require('gulp-webpack');
 var rename = require('gulp-rename');
+var chalk = require('chalk');
 var gUtil = require('gulp-util');
 var gulpif = require('gulp-if');
 var using = require('gulp-using');
@@ -17,8 +18,24 @@ gulp.task('build:dev', function() {
   var filter = require('gulp-filter')('**/*.{css,js}');
   return gulp.src([config.app.src, config.vendor.src])
     .pipe(named())
-    .pipe(gWebpack(webpackConfig, webpack, function() {
+    .pipe(gWebpack(webpackConfig, webpack, function(err, stats) {
+
       gUtil.log('webpack build completed');
+
+      if(err) {
+        throw new gUtil.PluginError("webpack:build-dev", err);
+      }
+
+      var _stats = stats.toString({
+        colors: true,
+        reasons: true,
+        cached: true,
+        source: false,
+        chunks: false
+      });
+
+      gUtil.log(chalk.blue('stats') + '\n', _stats);
+
     }))
     .pipe(gulp.dest(config.app.dest))
     .pipe(filter) // only reload certain assets

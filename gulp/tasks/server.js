@@ -3,8 +3,10 @@ var path = require('path');
 var Ekko = require('availity-ekko');
 var proxy = require('proxy-middleware');
 var _ = require('lodash');
-
+var chalk = require('chalk');
+var dateformat = require('dateformat');
 var proxy = require('proxy-middleware');
+
 var _ = require('lodash');
 
 var config = require('../config');
@@ -52,7 +54,7 @@ gulp.task('server:sync', ['server:rest'], function() {
 
   browserSync({
     notify: true,
-    logPrefix: 'browersync',
+    logPrefix: chalk.grey(dateformat(new Date(), 'HH:MM:ss')) + ' browersync',
     server: {
       baseDir: config.sync.src,
       middleware: [
