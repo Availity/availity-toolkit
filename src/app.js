@@ -83,5 +83,5 @@ app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
 });
 
 
-
+module.exports = app;
 
