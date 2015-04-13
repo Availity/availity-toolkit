@@ -33,7 +33,7 @@ app.controller('PageController', function($scope, AvModal) {
       new AvModal({
         show: true,
         scope: $scope,
-        template: registration.TEMPLATES.NOTIFICATION
+        templateUrl: 'registration/templates/notification.html'
       });
     }
   };
@@ -81,7 +81,6 @@ app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
 
     $urlRouterProvider.otherwise('/registration');
 });
-
 
 module.exports = app;
 
