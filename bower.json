@@ -11,6 +11,6 @@
     "angular"
   ],
   "resolutions": {
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.4"
   }
 }
