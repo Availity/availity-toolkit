@@ -47,7 +47,9 @@ module.exports = {
     dest: './build'
   },
   templates: {
-    src: 'src/**/*.html'
+    src: 'src/**/*.html',
+    base: 'src',
+    dest: './build'
   },
   sync: {
     src: './build'
