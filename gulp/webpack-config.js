@@ -5,7 +5,6 @@ var BowerWebpackPlugin = require('bower-webpack-plugin');
 
 var config = require('./config');
 
-// var DEBUG = config.args.environment === 'development';
 var DEBUG = true;
 
 var config = {
@@ -18,7 +17,7 @@ var config = {
   debug: DEBUG,
   cache: DEBUG,
   watch: DEBUG,
-  devtool: '#eval-source-map',
+  devtool: 'source-map',
   noParse: [
     /select2.*\.js/,
     /.*angular.*\.js/,
@@ -31,6 +30,7 @@ var config = {
     root: [path.join(config.project.path, '/src')],
     modulesDirectories: ['bower_components', 'node_modules'],
     extensions: ['', '.js', '.json']
+      
   },
   module:  {
     loaders: [
@@ -51,7 +51,9 @@ var config = {
         loader: 'file?name=fonts/[name].[ext]'
       },
       {test:/\.(\.jpe?g|png|gif)$/, loader: 'file?name=images/[name].[ext]'},
-      {test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]'} ]
+      {test: /\.html$/, loader: 'html'}
+
+    ]
   },
   plugins: [
 
