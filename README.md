@@ -4,6 +4,7 @@
 
 ## Table of Contents
 * [Intro](#intro)
+* [Folder Structure](#folder-structure)
 * [Working with the Toolkit](#working-with-the-toolkit)
 * [Authors](#authors)
 * [License](#license)
@@ -17,6 +18,59 @@ The Availity Toolkit assembles several Availity projects that make developing fo
 * [Availity UIKit](https://github.com/Availity/availity-uikit)
 
 Follow the above links to see more information about each project.
+
+
+## Folder Structure
+##### Folder Structure
+
+We encourage you to organize your project files by feature.
+
+
+###### Good
+
+```
+├── orders/
+|   ├── tests/
+|   |   └──orders-directive-spec.js
+|   |   └──orders-service-spec.js
+|   ├── templates/
+|   |   └──orders-template.html
+|   ├── orders-directive.js
+|   ├── orders-controller.js
+|   └── orders-service.js
+├── users/
+|   ├── tests/
+|   |   └──users-directive-spec.js
+|   |   └──users-service-spec.js
+|   ├── templates/
+|   |   └──users-template.html
+│   ├── users-directive.js
+│   ├── users-controller.js
+|   └── order-service.js
+├── home/
+|   ├── templates/
+│   |    └── home-template.html
+|   ├── home-controller.js
+```
+
+###### Bad
+
+```
+js/
+├── controllers/
+│   ├── homeController.js
+│   └──loginController.js
+├── directives/
+│   ├── usersDirective.js
+│   └──ordersDirective.js
+├── services/
+│   ├── userService.js
+│   ├── orderService.js
+│   └──loginService.js
+│partials/
+│   ├── home.html
+│   └── login.html
+```
 
 
 ## Working with the Toolkit
@@ -80,21 +134,6 @@ gulp build
 
 Builds your latest code for development.
 
-##### Bump
-
->
-```sh
-gulp bump
-```
-
-Bumps the version number of your code using [Semantic Versioning](http://semver.org/). You must specify whether to bump the major, minor, or patch version number:
-
->
-```sh
-gulp bump:major
-gulp bump:minor
-gulp bump:patch
-```
 
 ##### Dist
 
@@ -104,13 +143,6 @@ gulp dist
 ```
 
 Packages your code for distribution.
-
-##### Dotfiles
-
->
-```sh
-gulp dotfiles
-```
 
 Pulls down the latest Availity configuration files from the Availity Git repository.
 
@@ -151,16 +183,16 @@ gulp readme
 
 Creates this README file.
 
-##### Server:Rest
+##### Rest Server
 
 >
 ```sh
 gulp server:rest
 ```
 
-Starts the Availity Ekko server, which is a REST mock server that the Availity Toolkit provides.
+Starts the Availity Ekko server, which is a REST mock server that the Availity Ekko module provides.
 
-##### Server:Sync
+##### Server Sync
 
 >
 ```sh
