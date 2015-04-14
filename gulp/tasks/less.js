@@ -24,11 +24,11 @@ gulp.task('less:dev', function() {
       this.emit('end');
     }))
     .pipe(less())
+    .pipe(insert.prepend(banner() + '\n'))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(prefixer({
       browsers: config.less.browsers
     }))
-    .pipe(insert.prepend(banner() + '\n'))
     .pipe(sourcemaps.write(config.less.destMaps))
     .pipe(gulp.dest(config.less.dest))
     .pipe(filter('**/*.css')) // Filtering stream to only css files
