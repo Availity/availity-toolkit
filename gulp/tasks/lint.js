@@ -6,9 +6,9 @@ gulp.task('lint', function () {
   var stylish = require('jshint-stylish');
   var jscs = require('gulp-jscs');
 
-  var config = require('../config').js;
+  var config = require('../config');
 
-  gulp.src(config.src)
+  gulp.src(config.js.src)
     .pipe(jscs())
     .pipe(jshint())
     .pipe(jshint.reporter(stylish));
