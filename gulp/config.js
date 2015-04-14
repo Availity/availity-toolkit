@@ -51,6 +51,9 @@ module.exports = {
     base: 'src',
     dest: './build'
   },
+  packages: {
+    src: ['./package.json', './bower.json']
+  },
   sync: {
     src: './build'
   }
