@@ -23,7 +23,7 @@ gulp.task('build:dev', function() {
       gUtil.log('webpack build completed');
 
       if(err) {
-        throw new gUtil.PluginError("webpack:build-dev", err);
+        throw new gUtil.PluginError('webpack:build-dev', err);
       }
 
       var _stats = stats.toString({

@@ -51,7 +51,7 @@ app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
       'required': {
         'message': 'Your name is required.'
       },
-       'size': {
+      'size': {
         'min': 2,
         'max': 10,
         'message': 'Your name must be between 2 and 10 characters.'
@@ -73,13 +73,13 @@ app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
   });
 
   $stateProvider
-    .state('registration', {
-      url: '/registration',
-      template: registration.TEMPLATES.PAGE,
-      controller: 'PageController'
-    });
+  .state('registration', {
+    url: '/registration',
+    template: registration.TEMPLATES.PAGE,
+    controller: 'PageController'
+  });
 
-    $urlRouterProvider.otherwise('/registration');
+  $urlRouterProvider.otherwise('/registration');
 });
 
 module.exports = app;

@@ -19,5 +19,5 @@ require('angular-ui-router');
 require('availity-angular');
 
 // images
-require("availity-uikit/dist/images/logo-availity.png");
+require('availity-uikit/dist/images/logo-availity.png');
 

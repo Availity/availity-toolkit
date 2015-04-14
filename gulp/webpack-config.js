@@ -9,10 +9,10 @@ var DEBUG = true;
 
 var config = {
   output: {
-    path: path.join(config.project.path,  'build'),
+    path: path.join(config.project.path, 'build'),
     filename: '[name].js',
     chunkFilename: '[name]-[id]-bundle.js',
-    pathinfo: DEBUG,
+    pathinfo: DEBUG
   },
   debug: DEBUG,
   cache: DEBUG,
@@ -24,13 +24,12 @@ var config = {
     /.*lodash.*\.js/,
     /.*moment.*\.js/,
     /.*bootstrap.*\.js/,
-    /.*velocity.*\.js/,
+    /.*velocity.*\.js/
   ],
   resolve: {
     root: [path.join(config.project.path, '/src')],
     modulesDirectories: ['bower_components', 'node_modules'],
     extensions: ['', '.js', '.json']
-      
   },
   module:  {
     loaders: [

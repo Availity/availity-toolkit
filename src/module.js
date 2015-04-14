@@ -14,7 +14,7 @@ app.addModules = function(modules) {
 
   _.forEach(modules, function(module) {
     var contains = _.contains(app.requires, module);
-    if(!contains){
+    if(!contains) {
       app.requires.push(module);
     }
   });
