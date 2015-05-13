@@ -19,12 +19,7 @@ var config = {
   watch: DEBUG,
   devtool: 'source-map',
   noParse: [
-    /select2.*\.js/,
-    /.*angular.*\.js/,
-    /.*lodash.*\.js/,
-    /.*moment.*\.js/,
-    /.*bootstrap.*\.js/,
-    /.*velocity.*\.js/
+    /bower_components/
   ],
   resolve: {
     root: [path.join(config.project.path, '/src')],
