@@ -3,6 +3,7 @@
 .idea
 /bower_components/
 /coverage-reports/
+/coverage-reports/
 .DS_Store
 /dist/
 /web/js/
