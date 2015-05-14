@@ -43,7 +43,9 @@ module.exports = function (config) {
       ]
     },
     webpackServer: {
-      noInfo: true // silence webpack
+      noInfo: true,
+      quiet: true,
+      stats: true
     },
     exclude: [
       '*.less',
