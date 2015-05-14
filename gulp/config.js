@@ -51,6 +51,17 @@ module.exports = {
     base: 'src',
     dest: './build'
   },
+  tests: {
+    src: [
+      'specs.js',
+      {
+        pattern: '../src/**/*-spec.js',
+        included: false,
+        served: false,
+        watched: true
+      }
+    ]
+  },
   packages: {
     src: ['./package.json', './bower.json']
   },
