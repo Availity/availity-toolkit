@@ -18,7 +18,7 @@ gulp.task('server:rest', function () {
     script: 'index.js',
     ext: 'json',
     ignore: ['js', 'html', 'less'],
-    watch: [path.join(config.project.path, 'routes.json')],
+    watch: [path.join(config.project.path, 'routes.json'), path.join(config.project.path, 'data')],
     env: { 'NODE_ENV': 'development' },
     nodeArgs: ['--debug']
   }).on('restart', function () {
