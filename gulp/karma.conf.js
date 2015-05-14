@@ -20,11 +20,11 @@ module.exports = function (config) {
       'src/**/*-spec.js': ['webpack', 'sourcemap']
     },
     webpack: {
-      devtool: 'inline-source-map',
       resolve: webpackConfig.resolve,
       module: webpackConfig.module,
+      devtool: 'eval',
+      cache: true,
       plugins: [
-
         new webpack.ProvidePlugin({
           $: 'jquery',
           jQuery: 'jquery',
