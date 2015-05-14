@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require('bower-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var NGAnnotatePlugin  = require('ng-annotate-webpack-plugin');
 
 var config = require('./config');
 
@@ -10,7 +12,8 @@ var DEBUG = true;
 var config = {
   output: {
     path: path.join(config.project.path, 'build'),
-    filename: '[name].js',
+    filename: '[name]-[hash].js',
+    hash: true,
     pathinfo: DEBUG
   },
   debug: DEBUG,
@@ -61,6 +64,12 @@ var config = {
       'window.jQuery': 'jquery',
       _: 'lodash'
     }),
+
+    new NGAnnotatePlugin({
+        add: true
+    }),
+
+    new HtmlWebpackPlugin({ template: 'src/index.html' }),
 
     new BowerWebpackPlugin({
       excludes:  [
