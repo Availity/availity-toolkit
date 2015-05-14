@@ -11,7 +11,6 @@ var config = {
   output: {
     path: path.join(config.project.path, 'build'),
     filename: '[name].js',
-    chunkFilename: '[name]-[id]-bundle.js',
     pathinfo: DEBUG
   },
   debug: DEBUG,
@@ -52,7 +51,8 @@ var config = {
   plugins: [
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      name: ['vendor'],
+      minChunks: Infinity
     }),
 
     new webpack.ProvidePlugin({
@@ -70,6 +70,8 @@ var config = {
         /select2.*\.css/
       ]
     }),
+
+    new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
 
     // Use bundle name for extracting bundle css
     new ExtractTextPlugin('css/[name].css', {
