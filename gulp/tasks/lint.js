@@ -1,4 +1,6 @@
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
+var using = require('gulp-using');
 
 gulp.task('lint', function () {
 
@@ -9,6 +11,7 @@ gulp.task('lint', function () {
   var config = require('../config');
 
   gulp.src(config.js.src)
+  .pipe(gulpif(config.args.verbose, using({prefix:'Task [lint] using'})))
     .pipe(jscs())
     .pipe(jshint())
     .pipe(jshint.reporter(stylish));
