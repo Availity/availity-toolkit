@@ -16,7 +16,7 @@ gulp.task('build', ['build:dev']);
 
 gulp.task('build:dev', function() {
 
-  var filter = require('gulp-filter')('**/*.{css,js}');
+  var filter = require('gulp-filter')('**/*.css');
 
   return gulp.src([
       config.app.src,
