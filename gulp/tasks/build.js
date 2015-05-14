@@ -15,8 +15,13 @@ var webpackConfig = require('../webpack-config');
 gulp.task('build', ['build:dev']);
 
 gulp.task('build:dev', function() {
+
   var filter = require('gulp-filter')('**/*.{css,js}');
-  return gulp.src([config.app.src, config.vendor.src])
+
+  return gulp.src([
+      config.app.src,
+      config.vendor.src
+    ])
     .pipe(named())
     .pipe(gWebpack(webpackConfig, webpack, function(err, stats) {
 
