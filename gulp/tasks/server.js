@@ -49,7 +49,7 @@ gulp.task('server:sync', ['server:rest'], function() {
 
   browserSync({
     notify: true,
-    open: false,
+    open: true,
     logPrefix: chalk.grey(dateformat(new Date(), 'HH:MM:ss')) + ' browersync',
     server: {
       baseDir: config.sync.src,
