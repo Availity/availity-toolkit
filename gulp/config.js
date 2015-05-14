@@ -42,6 +42,14 @@ module.exports = {
     src: 'src/vendor.js',
     dest: './build'
   },
+  polyfill: {
+    name: 'polyfill.js',
+    src: [
+      'bower_components/html5shiv/dist/html5shiv.min.js',
+      'bower_components/respond/dest/respond.min.js'
+    ],
+    dest: './build'
+  },
   markup: {
     src: 'src/index.html',
     dest: './build'
