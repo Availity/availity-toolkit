@@ -1,3 +1,5 @@
+'use strict';
+
 // jquery
 require('jquery');
 require('bootstrap');
