@@ -17,7 +17,6 @@ gulp.task('server:rest', function () {
   nodemon({
     script: 'index.js',
     ext: 'json',
-    ignore: ['js', 'html', 'less'],
     watch: [path.join(config.project.path, 'routes.json'), path.join(config.project.path, 'data')],
     // nodeArgs: ['--debug'],
     env: { 'NODE_ENV': 'development' }
