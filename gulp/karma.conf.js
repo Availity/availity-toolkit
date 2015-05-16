@@ -51,7 +51,7 @@ module.exports = function (config) {
       '*.less',
       '*.html'
     ],
-    reporters: ['progress', 'coverage'],
+    reporters: ['mocha', 'coverage'],
     coverageReporter: {
       dir: '../coverage-reports/',
       subdir: function (browser) {
@@ -73,6 +73,7 @@ module.exports = function (config) {
     // List plugins explicitly, since autoloading karma-webpack won't work here
     plugins: [
       require('karma-jasmine'),
+      require('karma-mocha-reporter'),
       require('karma-spec-reporter'),
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
