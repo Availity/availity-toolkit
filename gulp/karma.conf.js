@@ -10,15 +10,17 @@ webpackConfig.module.postLoaders = [{
   loader: 'istanbul-instrumenter'
 }];
 
+// Dynamically build preprocessors instructions from config.js
+var _preprocessors = {};
+_preprocessors['specs.js'] = ['webpack', 'sourcemap'];
+_preprocessors[_config.js.specs] = ['webpack', 'sourcemap'];
+
 module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
     files: _config.tests.src,
-    preprocessors: {
-      'specs.js': ['webpack', 'sourcemap'],
-      'src/**/*-spec.js': ['webpack', 'sourcemap']
-    },
+    preprocessors: _preprocessors,
     webpack: {
       resolve: webpackConfig.resolve,
       module: webpackConfig.module,
@@ -53,7 +55,7 @@ module.exports = function (config) {
     ],
     reporters: ['mocha', 'coverage'],
     coverageReporter: {
-      dir: '../coverage-reports/',
+      dir: '../' + _config.js.reportsDir,
       subdir: function (browser) {
         return browser.toLowerCase().split(/[ /-]/)[0];
       },
@@ -70,7 +72,7 @@ module.exports = function (config) {
     browsers: ['PhantomJS'],
     singleRun: true,
 
-    // List plugins explicitly, since autoloading karma-webpack won't work here
+    // List plugins explicitly, since auto-loading karma-webpack won't work here
     plugins: [
       require('karma-jasmine'),
       require('karma-mocha-reporter'),

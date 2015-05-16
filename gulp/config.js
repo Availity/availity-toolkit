@@ -18,7 +18,10 @@ module.exports = {
     src: path.join(__dirname, '..', 'bower_components')
   },
   js: {
-    src: ['gulpfile.js', 'gulp/**/*.js', 'src/**/*.js']
+    src: 'src/**/*.js',
+    srcAll: ['gulpfile.js', 'gulp/**/*.js', 'src/**/*.js'],
+    specs: 'src/**/*-spec.js',
+    reportsDir: 'reports'
   },
   less: {
     src: 'src/app.less',
