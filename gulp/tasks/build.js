@@ -4,48 +4,39 @@ var gWebpack = require('gulp-webpack');
 var rename = require('gulp-rename');
 var chalk = require('chalk');
 var gUtil = require('gulp-util');
-var gulpif = require('gulp-if');
-var using = require('gulp-using');
-var browserSync = require('browser-sync');
-var named = require('vinyl-named');
 
 var config = require('../config');
 var webpackConfig = require('../webpack-config');
+var loaded = false;
 
 gulp.task('build', ['build:dev']);
 
-gulp.task('build:dev', function() {
+gulp.task('build:dev', function(cb) {
+  // run webpack
+  webpack(webpackConfig, function(err, stats) {
 
-  var filter = require('gulp-filter')('**/*.css');
+    gUtil.log('webpack build completed');
 
-  return gulp.src([
-      config.app.src,
-      config.vendor.src
-    ])
-    .pipe(named())
-    .pipe(gWebpack(webpackConfig, webpack, function(err, stats) {
+    if(err) {
+      throw new gUtil.PluginError('webpack:build-dev', err);
+    }
 
-      gUtil.log('webpack build completed');
+    var _stats = stats.toString({
+      colors: true,
+      reasons: true,
+      cached: true,
+      source: false,
+      chunks: false
+    });
 
-      if(err) {
-        throw new gUtil.PluginError('webpack:build-dev', err);
-      }
+    gUtil.log(chalk.blue('stats') + '\n', _stats);
 
-      var _stats = stats.toString({
-        colors: true,
-        reasons: true,
-        cached: true,
-        source: false,
-        chunks: false
-      });
+    if(!loaded) {
+      cb();
+      loaded = true;
+    }
 
-      gUtil.log(chalk.blue('stats') + '\n', _stats);
-
-    }))
-    .pipe(gulp.dest(config.app.dest))
-    .pipe(filter) // only reload certain assets
-    .pipe(gulpif(config.args.verbose, using({prefix:'Task [build:dev] using'})))
-    .pipe(browserSync.reload({stream: true}));
+  });
 });
 
 gulp.task('build:prod', function() {

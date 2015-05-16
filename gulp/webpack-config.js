@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require('bower-webpack-plugin');
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var NGAnnotatePlugin  = require('ng-annotate-webpack-plugin');
 
 var config = require('./config');
@@ -10,6 +10,11 @@ var config = require('./config');
 var DEBUG = true;
 
 var config = {
+  context: path.join(config.project.path, 'src'),
+  entry: {
+    app: 'app.js',
+    vendor: ['vendor']
+  },
   output: {
     path: path.join(config.project.path, 'build'),
     filename: '[name]-[hash].js',
@@ -19,7 +24,7 @@ var config = {
   debug: DEBUG,
   cache: DEBUG,
   watch: DEBUG,
-  devtool: 'source-map',
+  devtool: 'eval',
   noParse: [
     /bower_components/
   ],
@@ -66,7 +71,7 @@ var config = {
     }),
 
     new NGAnnotatePlugin({
-        add: true
+      add: true
     }),
 
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
