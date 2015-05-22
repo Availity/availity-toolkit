@@ -14,21 +14,13 @@ app.addModules([
   'availity.ui.templates'
 ]);
 
-app.controller('PageController', function($scope, AvModal) {
+app.controller('PageController', function($scope, AvModal, AV_GLOBALS) {
 
   var reg = {
     name: null,
     selectedState: null,
     date: null,
-    states: [
-      { id: 'AL', name: 'Alabama' },
-      { id: 'AL', name: 'Georgia' },
-      { id: 'UT', name: 'Utah' },
-      { id: 'CA', name: 'California' },
-      { id: 'NM', name: 'New Mexico' },
-      { id: 'TX', name: 'Texas' },
-      { id: 'WY', name: 'Wyoming' }
-    ],
+    states: AV_GLOBALS.REGIONS,
     onShow: function() {
       new AvModal({
         show: true,
