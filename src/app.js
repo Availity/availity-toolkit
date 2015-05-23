@@ -65,13 +65,14 @@ app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
   });
 
   $stateProvider
-  .state('registration', {
-    url: '/registration',
-    template: registration.TEMPLATES.PAGE,
-    controller: 'PageController'
-  });
+    .state('registration', {
+      url: '/registration',
+      template: registration.TEMPLATES.PAGE,
+      controller: 'PageController'
+    });
 
   $urlRouterProvider.otherwise('/registration');
+
 });
 
 module.exports = app;
