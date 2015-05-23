@@ -17,7 +17,7 @@ var config = {
   },
   output: {
     path: path.join(config.project.path, 'build'),
-    filename: '[name]-[hash].js',
+    filename: 'js/[name]-[hash].js',
     hash: true,
     pathinfo: DEBUG
   },

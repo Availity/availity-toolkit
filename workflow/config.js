@@ -24,7 +24,7 @@ module.exports = {
     reportsDir: 'reports'
   },
   less: {
-    src: 'project/app/app.less',
+    src: 'project/app/index.less',
     targets: 'project/app/**/*.less',
     dest: 'build/css',
     destMaps: './maps', // relative to dest folder
@@ -51,7 +51,7 @@ module.exports = {
       'bower_components/html5shiv/dist/html5shiv.min.js',
       'bower_components/respond/dest/respond.min.js'
     ],
-    dest: './build'
+    dest: './build/js'
   },
   markup: {
     src: 'project/app/index.html',
