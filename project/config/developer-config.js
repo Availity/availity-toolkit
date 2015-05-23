@@ -1,11 +1,10 @@
 var path = require('path');
-var config = require('./gulp/config');
 
 var developerConfig = {
 
   development: {
-    data: path.join(config.project.path, '/data'),
-    routes: path.join(config.project.path, './routes.json'),
+    data: path.join(__dirname , '../data'),
+    routes: path.join(__dirname, './routes.json'),
     servers: {
       web: {
         host: '0.0.0.0',
@@ -25,9 +24,8 @@ var developerConfig = {
         port: 9999
       }
     },
-    data: path.join(__dirname, '/data'),
-    routes: path.join(__dirname, '/routes.json'),
-    directory: path.join(__dirname, '/build')
+    data: path.join(__dirname , '../data'),
+    routes: path.join(__dirname, './routes.json')
   }
 
 };

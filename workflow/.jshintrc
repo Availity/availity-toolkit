@@ -1,0 +1,9 @@
+{
+  "extends" : "../.jshintrc",
+
+  "globals": {
+    "module": false,
+    "require": false,
+    "localRequire": false
+  }
+}

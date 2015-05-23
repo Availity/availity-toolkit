@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var config = require('../config');
+
+var config = localRequire('workflow/config');
 
 gulp.task('watch', ['watch:less', 'watch:templates']);
 

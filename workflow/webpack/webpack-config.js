@@ -5,12 +5,12 @@ var BowerWebpackPlugin = require('bower-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var NGAnnotatePlugin  = require('ng-annotate-webpack-plugin');
 
-var config = require('./config');
+var config = require('../config');
 
 var DEBUG = true;
 
 var config = {
-  context: path.join(config.project.path, 'src'),
+  context: path.join(config.project.path, 'project/app'),
   entry: {
     app: 'index.js',
     vendor: ['vendor']
@@ -29,7 +29,7 @@ var config = {
     /bower_components/
   ],
   resolve: {
-    root: [path.join(config.project.path, '/src')],
+    root: [path.join(config.project.path, '/project/app')],
     modulesDirectories: ['bower_components', 'node_modules'],
     extensions: ['', '.js', '.json']
   },
@@ -74,7 +74,7 @@ var config = {
       add: true
     }),
 
-    new HtmlWebpackPlugin({ template: 'src/index.html' }),
+    new HtmlWebpackPlugin({ template: 'project/app/index.html' }),
 
     new BowerWebpackPlugin({
       excludes:  [

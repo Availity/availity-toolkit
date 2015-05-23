@@ -1,18 +1,15 @@
 var gulp = require('gulp');
 var webpack = require('webpack');
-var gWebpack = require('gulp-webpack');
-var rename = require('gulp-rename');
 var chalk = require('chalk');
 var gUtil = require('gulp-util');
 
-var config = require('../config');
-var webpackConfig = require('../webpack-config');
+var webpackConfig = localRequire('workflow/webpack/webpack-config');
 var loaded = false;
 
 gulp.task('build', ['build:dev']);
 
 gulp.task('build:dev', function(cb) {
-  // run webpack
+
   webpack(webpackConfig, function(err, stats) {
 
     gUtil.log('webpack build completed');
@@ -39,20 +36,20 @@ gulp.task('build:dev', function(cb) {
   });
 });
 
-gulp.task('build:prod', function() {
+// gulp.task('build:prod', function() {
 
-  var filter = require('gulp-filter')('**/*.js');
-  var uglify = require('gulp-uglify');
+//   var filter = require('gulp-filter')('**/*.js');
+//   var uglify = require('gulp-uglify');
 
-  webpackConfig.debug =  false;
-  webpackConfig.cache =  false;
-  webpackConfig.watch =  false;
+//   webpackConfig.debug =  false;
+//   webpackConfig.cache =  false;
+//   webpackConfig.watch =  false;
 
-  return gulp.src(config.app.src)
-    .pipe(gWebpack(webpackConfig))
-    .pipe(filter) // Minify only the JavaScript, not the map
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(filter.restore())
-    .pipe(gulp.dest(config.app.dest));
-});
+//   return gulp.src(config.app.src)
+//     .pipe(gWebpack(webpackConfig))
+//     .pipe(filter) // Minify only the JavaScript, not the map
+//     .pipe(uglify())
+//     .pipe(rename({suffix: '.min'}))
+//     .pipe(filter.restore())
+//     .pipe(gulp.dest(config.app.dest));
+// });

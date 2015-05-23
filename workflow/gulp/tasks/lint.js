@@ -3,7 +3,7 @@ var glob = require('glob');
 var gulpif = require('gulp-if');
 var using = require('gulp-using');
 
-var config = require('../config');
+var config = localRequire('workflow/config');
 
 gulp.task('lint', function () {
 

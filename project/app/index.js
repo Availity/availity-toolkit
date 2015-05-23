@@ -5,7 +5,7 @@ require('angular');
 require('availity-angular');
 
 var app = require('./module');
-var registration = require('./registration/index');
+var registration = require('./registration');
 
 app.addModules([
   'ui.router',
