@@ -12,7 +12,7 @@ var DEBUG = true;
 var config = {
   context: path.join(config.project.path, 'src'),
   entry: {
-    app: 'app.js',
+    app: 'index.js',
     vendor: ['vendor']
   },
   output: {
