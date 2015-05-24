@@ -12,8 +12,6 @@ gulp.task('build:dev', function(cb) {
 
   webpack(webpackConfig, function(err, stats) {
 
-    gUtil.log('webpack build completed');
-
     if(err) {
       throw new gUtil.PluginError('webpack:build-dev', err);
     }
@@ -36,20 +34,6 @@ gulp.task('build:dev', function(cb) {
   });
 });
 
-// gulp.task('build:prod', function() {
+gulp.task('build:prod', function() {
 
-//   var filter = require('gulp-filter')('**/*.js');
-//   var uglify = require('gulp-uglify');
-
-//   webpackConfig.debug =  false;
-//   webpackConfig.cache =  false;
-//   webpackConfig.watch =  false;
-
-//   return gulp.src(config.app.src)
-//     .pipe(gWebpack(webpackConfig))
-//     .pipe(filter) // Minify only the JavaScript, not the map
-//     .pipe(uglify())
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(filter.restore())
-//     .pipe(gulp.dest(config.app.dest));
-// });
+});
