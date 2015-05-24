@@ -1,2 +1,2 @@
-var testsContext = require.context('../../app/src', true, /-spec$/);
+var testsContext = require.context('../../project/app', true, /-spec$/);
 testsContext.keys().forEach(testsContext);

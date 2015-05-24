@@ -11,7 +11,7 @@ gulp.task('lint', function () {
   var stylish = require('jshint-stylish');
   var jscs = require('gulp-jscs');
 
-  gulp.src(config.js.srcAll)
+  gulp.src(config.js.src)
   .pipe(gulpif(config.args.verbose, using({prefix:'Task [lint] using'})))
     .pipe(jscs())
     .pipe(jshint())

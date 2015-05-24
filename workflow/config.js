@@ -21,7 +21,7 @@ module.exports = {
     src: 'project/app/**/*.js',
     srcAll: ['gulpfile.js', 'workflow/**/*.js', 'project/app/**/*.js'],
     specs: 'project/app/**/*-spec.js',
-    reportsDir: 'reports'
+    reportsDir: path.join(__dirname, '..', 'reports')
   },
   less: {
     src: 'project/app/index.less',
@@ -66,7 +66,7 @@ module.exports = {
     src: [
       'specs.js',
       {
-        pattern: '../project/app/**/*-spec.js',
+        pattern: path.join(__dirname, '..', '/project/app/**/*-spec.js'),
         included: false,
         served: false,
         watched: true

@@ -1,7 +1,7 @@
 var webpack = require('webpack');
-var webpackConfig = require('./webpack-config');
+var webpackConfig = require('../webpack/webpack-config');
 var BowerWebpackPlugin = require('bower-webpack-plugin');
-var _config = require('./config');
+var _config = require('../config');
 
 webpackConfig.cache = true;
 webpackConfig.module.postLoaders = [{
@@ -55,7 +55,7 @@ module.exports = function (config) {
     ],
     reporters: ['mocha', 'coverage'],
     coverageReporter: {
-      dir: '../' + _config.js.reportsDir,
+      dir: _config.js.reportsDir,
       subdir: function (browser) {
         return browser.toLowerCase().split(/[ /-]/)[0];
       },
