@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var webpack = require('webpack');
-var chalk = require('chalk');
 var gUtil = require('gulp-util');
 
 var webpackConfig = localRequire('workflow/webpack/webpack-config');
@@ -16,15 +15,10 @@ gulp.task('build:dev', function(cb) {
       throw new gUtil.PluginError('webpack:build-dev', err);
     }
 
-    var _stats = stats.toString({
-      colors: true,
-      reasons: true,
-      cached: true,
-      source: false,
-      chunks: false
-    });
+    gUtil.log('[build:webpack]', stats.toString({
+      colors: true
+    }));
 
-    gUtil.log(chalk.blue('stats') + '\n', _stats);
 
     if(!loaded) {
       cb();
