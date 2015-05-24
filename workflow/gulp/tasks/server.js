@@ -46,11 +46,8 @@ gulp.task('server:sync', ['server:rest'], function() {
   //
   // }
   var _url = _.template('http://localhost:<%= port %>/');
-  var proxy1 = url.parse(_url({port: developerConfig.development.servers.web.port}));
-  proxy1.route = '/api';
-
-  var proxy2 = _.assign(proxy1);
-  proxy2.route ='/public/api';
+  var proxyTarget = url.parse(_url({port: developerConfig.development.servers.web.port}));
+  proxyTarget.route = '/api';
 
   browserSync({
     notify: true,
@@ -69,8 +66,7 @@ gulp.task('server:sync', ['server:rest'], function() {
           next();
         },
         // Middleware #2: Proxy request to availity-ekko server
-        proxy(proxy1),
-        proxy(proxy2)
+        proxy(proxyTarget)
       ]
     }
   });
