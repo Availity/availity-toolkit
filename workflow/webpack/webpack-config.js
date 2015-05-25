@@ -4,6 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require('bower-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var NGAnnotatePlugin  = require('ng-annotate-webpack-plugin');
+var pkg = localRequire('./package.json');
 
 var config = require('../config');
 var utils = require('./utils');
@@ -35,6 +36,7 @@ var config = {
   noParse: [
     /bower_components/
   ],
+
   resolve: {
     root: [path.join(config.project.path, '/project/app')],
     modulesDirectories: ['bower_components', 'node_modules'],
@@ -102,7 +104,8 @@ var config = {
 
     new HtmlWebpackPlugin({
       template: 'project/app/index.html',
-      favicon: 'project/app/favicon.ico'
+      favicon: 'project/app/favicon.ico',
+      pkg: pkg
     }),
 
     // Use bundle name for extracting bundle css
@@ -121,5 +124,19 @@ var config = {
     }
   ]
 };
+
+if(utils.isProduction()) {
+  config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: false,
+      compress: {
+        drop_console: true
+      },
+      output: { comments: false }
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin()
+  );
+}
 
 module.exports = config;

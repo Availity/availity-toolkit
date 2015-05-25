@@ -3,12 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Availity</title>
+    {% if (o.htmlWebpackPlugin.options.pkg.title) { %}
+    <title>{%=o.htmlWebpackPlugin.options.pkg.title %}</title>
+    {% } %}
     {% if (o.htmlWebpackPlugin.files.favicon) { %}
     <link rel="shortcut icon" href="{%=o.htmlWebpackPlugin.files.favicon%}">
     {% } %}
-    <meta name="description" content="">
+    <meta name="description" content="{%=o.htmlWebpackPlugin.options.pkg.description %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+    <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+    {% } %}
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/index.css">
 
