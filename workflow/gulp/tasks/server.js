@@ -8,8 +8,8 @@ var nodemon = require('gulp-nodemon');
 var _ = require('lodash');
 var path = require('path');
 
-var config = localRequire('workflow/config');
-var developerConfig = localRequire('project/config/developer-config');
+var config = require('../../config');
+var developerConfig = require(path.resolve(config.project.path, 'project/config/developer-config'));
 
 gulp.task('server', ['server:rest', 'server:sync']);
 
@@ -33,7 +33,7 @@ gulp.task('server:sync', ['server:rest'], function() {
   var url = require('url');
   var path = require('path');
   var fs = require('fs');
-  var config = localRequire('workflow/config');
+  var config = require('../../config');
 
   // Parse out url and create the following config:
   //

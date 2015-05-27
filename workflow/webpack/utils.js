@@ -12,7 +12,7 @@ var utils = {
   },
 
   maps: function() {
-    return this.isDevelopment() ? 'eval-source-map' : 'source-map';
+    return this.isDevelopment() ? 'source-map' : 'source-map';
   },
 
   entry: function () {

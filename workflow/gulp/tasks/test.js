@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var gUtil = require('gulp-util');
 var path = require('path');
-var config = localRequire('workflow/config');
+var config = require('../../config');
 
 gulp.task('test', ['test:ci', 'complexity']);
 

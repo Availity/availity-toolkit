@@ -3,7 +3,7 @@ var gulpif = require('gulp-if');
 var concat = require('gulp-concat');
 var using = require('gulp-using');
 
-var config = localRequire('workflow/config');
+var config = require('../../config');
 
 gulp.task('concat', ['concat:polyfill']);
 

@@ -3,7 +3,6 @@
 
   "globals": {
     "module": false,
-    "require": false,
-    "localRequire": false
+    "require": false
   }
 }

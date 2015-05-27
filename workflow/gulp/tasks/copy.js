@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
-var config = localRequire('workflow/config');
+var config = require('../../config');
 
 gulp.task('copy', ['copy:templates']);
 

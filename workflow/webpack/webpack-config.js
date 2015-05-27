@@ -4,7 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require('bower-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var NGAnnotatePlugin  = require('ng-annotate-webpack-plugin');
-var pkg = localRequire('./package.json');
+
+var pkg = require('../../package.json');
 
 var config = require('../config');
 var utils = require('./utils');
@@ -31,12 +32,11 @@ var config = {
   // The UglifyJsPlugin uses SourceMaps to map errors to source code. And SourceMaps are slow. As you should only use this in production this is fine. If your production build is really slow (or doesn’t finish at all) you can disable it with new UglifyJsPlugin({ sourceMap: false }).
   devtool: utils.maps(),
   debug: true,
-  cache: utils.isDevelopment(),
-  watch: utils.isDevelopment(),
+  cache: true,
+  watch: true,
   noParse: [
-    /bower_components/
+    /.*bower_components.*/
   ],
-
   resolve: {
     root: [path.join(config.project.path, '/project/app')],
     modulesDirectories: ['bower_components', 'node_modules'],

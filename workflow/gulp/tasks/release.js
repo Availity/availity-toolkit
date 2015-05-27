@@ -9,8 +9,8 @@ var filter = require('gulp-filter');
 var tagVersion = require('gulp-tag-version');
 var runSequence = require('run-sequence').use(gulp);
 
-var config = localRequire('workflow/config');
-var pkg = localRequire('package.json');
+var config = require('../../config');
+var pkg = require('../../../package.json');
 
 var type = 'patch';
 
