@@ -1,35 +1,28 @@
 var path = require('path');
-var config = require('./gulp/config');
+var fs = require('fs');
+var _ = require("lodash");
 
-var developerConfig = {
 
-  development: {
-    data: path.join(config.project.path, '/data'),
-    routes: path.join(config.project.path, './routes.json'),
-    servers: {
-      web: {
-        host: '0.0.0.0',
-        port: 9999
-      }
-    }
-  },
+var developerConfig;
 
-  production: {
-    latency: 300,
-    user: null,
-    cache: 86400000,
-    limit: '50mb',
-    servers: {
-      web: {
-        host: "0.0.0.0",
-        port: 9999
-      }
-    },
-    data: path.join(__dirname, '/data'),
-    routes: path.join(__dirname, '/routes.json'),
-    directory: path.join(__dirname, '/build')
-  }
+try {
+  stats = fs.statSync('./project/config/developer-config.js');
+  developerConfig = _.defaults({}, developerConfig, require('./project/config/developer-config'));
+}catch (e) {
 
-};
+}
+try {
+  stats = fs.statSync('./project/config/project-config.js');
+  developerConfig = _.defaults({}, developerConfig, require('./project/config/project-config'));
+}catch (e) {
+
+}
+try {
+  stats = fs.statSync('./global-config.js');
+  developerConfig = _.defaults({}, developerConfig, require('./global-config'));
+}catch (e) {
+
+}
+
 
 module.exports = developerConfig;

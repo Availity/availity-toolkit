@@ -12,7 +12,7 @@ var developerConfig = {
       }
     }
   },
-  t1: 1,
+  t3: 3,
   production: {
     latency: 300,
     user: null,

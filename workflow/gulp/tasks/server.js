@@ -9,7 +9,8 @@ var _ = require('lodash');
 var path = require('path');
 
 var config = require('../../config');
-var developerConfig = require(path.resolve(config.project.path, 'project/config/developer-config'));
+var developerConfig = require(path.resolve(config.project.path, 'default-config'));
+
 
 gulp.task('server', ['server:rest', 'server:sync']);
 
