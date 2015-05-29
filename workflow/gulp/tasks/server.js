@@ -9,7 +9,7 @@ var _ = require('lodash');
 var path = require('path');
 
 var config = require('../../config');
-var developerConfig = require(path.resolve(config.project.path, 'default-config'));
+var config = require(path.resolve(config.project.path, 'config'));
 
 
 gulp.task('server', ['server:rest', 'server:sync']);
@@ -47,7 +47,7 @@ gulp.task('server:sync', ['server:rest'], function() {
   //
   // }
   var _url = _.template('http://localhost:<%= port %>/');
-  var proxyTarget = url.parse(_url({port: developerConfig.development.servers.web.port}));
+  var proxyTarget = url.parse(_url({port: config.development.servers.web.port}));
   proxyTarget.route = '/api';
 
   browserSync({
