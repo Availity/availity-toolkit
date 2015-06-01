@@ -1,6 +1,6 @@
 var Ekko = require('availity-ekko');
 
-var developerConfig = require('./developer-config');
+var developerConfig = require('./config');
 
 var ekko = new Ekko();
-ekko.start(developerConfig);
+ekko.start(config);
