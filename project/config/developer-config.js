@@ -14,6 +14,8 @@ var developerConfig = {
   },
 
   production: {
+    data: path.join(__dirname , '../data'),
+    routes: path.join(__dirname, './routes.json'),
     latency: 300,
     user: null,
     cache: 86400000,
@@ -23,9 +25,7 @@ var developerConfig = {
         host: "0.0.0.0",
         port: 9999
       }
-    },
-    data: path.join(__dirname , '../data'),
-    routes: path.join(__dirname, './routes.json')
+    }
   }
 
 };

@@ -30,9 +30,9 @@ var config = {
   // The best performance has devtool: "eval", but it only maps to compiled source code per module. In many cases this is good enough. Hint: combine it with output.pathinfo: true.
   // The UglifyJsPlugin uses SourceMaps to map errors to source code. And SourceMaps are slow. As you should only use this in production this is fine. If your production build is really slow (or doesn’t finish at all) you can disable it with new UglifyJsPlugin({ sourceMap: false }).
   devtool: utils.maps(),
-  debug: true,
-  cache: true,
-  watch: true,
+  debug: utils.isDevelopment(),
+  cache: utils.isDevelopment(),
+  watch: utils.isDevelopment(),
   noParse: [
     /.*bower_components.*/
   ],

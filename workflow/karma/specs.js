@@ -1,2 +1,5 @@
-var testsContext = require.context('../../project/app', true, /-spec$/);
-testsContext.keys().forEach(testsContext);
+require('angular');
+require('angular-mocks');
+
+var context = require.context('../../project/app', true, /-spec$/);
+context.keys().forEach(context);

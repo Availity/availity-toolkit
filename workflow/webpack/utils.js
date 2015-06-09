@@ -19,7 +19,6 @@ var utils = {
     return 'index.js';
   },
 
-
   fileName: function() {
     return this.isProduction() ? '[name]-[hash].js' : '[name].js';
   },

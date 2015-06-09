@@ -6,7 +6,7 @@ require('availity-angular');
 
 var app = require('../module');
 
-app.service('helloService', function() {
+app.service('registrationService', function() {
 
   this.hello = function() {
     return 'hi';
