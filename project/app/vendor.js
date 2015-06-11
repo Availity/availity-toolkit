@@ -8,6 +8,7 @@ require('select2');
 require('velocity');
 require('moment');
 require('bootstrap-datepicker');
+require('jquery.inputmask');
 
 // utils
 require('lodash');
