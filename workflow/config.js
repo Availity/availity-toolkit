@@ -81,6 +81,6 @@ module.exports = {
   },
   deploy: {
     src: './build',
-    dest: './deploy'
+    dest: './deploy/whatever'
   }
 };
