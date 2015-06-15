@@ -81,6 +81,6 @@ module.exports = {
   },
   deploy: {
     src: './build',
-    dest: './deploy/whatever'
+    dest: '../availity-web/projects/<nameofproject>'
   }
 };
