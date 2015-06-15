@@ -1,15 +1,14 @@
 var gulp = require('gulp');
-var proxy = require('proxy-middleware');
+var proxyMiddleware = require('http-proxy-middleware');
 var _ = require('lodash');
 var chalk = require('chalk');
 var dateformat = require('dateformat');
-var proxy = require('proxy-middleware');
 var nodemon = require('gulp-nodemon');
 var _ = require('lodash');
 var path = require('path');
-var config = require('../config');
 
-var developerConfig = require('../../developer-config');
+var config = require('../../config');
+var developerConfig = require(path.resolve(config.project.path, 'project/config/developer-config'));
 
 gulp.task('server', ['server:rest', 'server:sync']);
 
@@ -17,10 +16,12 @@ gulp.task('server:rest', function () {
   nodemon({
     script: 'index.js',
     ext: 'json',
-    ignore: ['js', 'html', 'less'],
-    watch: [path.join(config.project.path, 'routes.json')],
-    env: { 'NODE_ENV': 'development' },
-    nodeArgs: ['--debug']
+    watch: [
+      path.join(config.project.path, 'project/config/routes.json'),
+      path.join(config.project.path, 'project/data')
+    ],
+    // nodeArgs: ['--debug'],
+    env: { 'NODE_ENV': 'development' }
   }).on('restart', function () {
     console.log('server restarted!');
   });
@@ -31,7 +32,7 @@ gulp.task('server:sync', ['server:rest'], function() {
   var url = require('url');
   var path = require('path');
   var fs = require('fs');
-  var config = require('../config');
+  var config = require('../../config');
 
   // Parse out url and create the following config:
   //
@@ -44,25 +45,29 @@ gulp.task('server:sync', ['server:rest'], function() {
   //
   // }
   var _url = _.template('http://localhost:<%= port %>/');
-  var proxyOptions = url.parse(_url({port: developerConfig.development.servers.web.port}));
-  proxyOptions.route = '/api';
+  var proxyUrl = _url({port: developerConfig.development.servers.web.port});
+  var apiProxy = proxyMiddleware('/api', {target: proxyUrl});
 
   browserSync({
     notify: true,
+    open: true,
     logPrefix: chalk.grey(dateformat(new Date(), 'HH:MM:ss')) + ' browersync',
+    ghostMode: false,
     server: {
       baseDir: config.sync.src,
+
       middleware: [
-        // Middleware #1: Allow web page requests without .html file extension in URLs
+        // Middleware #1: proxy
+        apiProxy,
+
+        // Middleware #2: Allow web page requests without .html file extension in URLs
         function(req, res, next) {
           var uri = url.parse(req.url);
-          if(uri.pathname.length > 1 && path.extname(uri.pathname) === '' && fs.existsSync('./dest' + uri.pathname + '.html')) {
+          if(uri.pathname.length > 1 && path.extname(uri.pathname) === '' && fs.existsSync(config.sync.src + uri.pathname + '.html')) {
             req.url = uri.pathname + '.html' + (uri.search || '');
           }
           next();
-        },
-        // Middleware #2: Proxy request to availity-ekko server
-        proxy(proxyOptions)
+        }
       ]
     }
   });

@@ -1,3 +1,5 @@
+'use strict';
+
 // jquery
 require('jquery');
 require('bootstrap');
@@ -6,6 +8,7 @@ require('select2');
 require('velocity');
 require('moment');
 require('bootstrap-datepicker');
+require('jquery.inputmask');
 
 // utils
 require('lodash');
@@ -18,6 +21,6 @@ require('angular-ui-router');
 // availity
 require('availity-angular');
 
-// images
-require('availity-uikit/dist/images/logo-availity.png');
+// css
+require('angular/angular-csp.css');
 

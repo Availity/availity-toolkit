@@ -10,9 +10,9 @@ var gulpif = require('gulp-if');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
-var config = require('../config');
-var banner = require('../utils/banner');
-var logger = require('../utils/logger');
+var config = require('../../config');
+var banner = require('../../utils/banner');
+var logger = require('../../utils/logger');
 
 gulp.task('less', ['less:dev']);
 

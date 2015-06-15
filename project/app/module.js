@@ -5,7 +5,8 @@ var _ = require('lodash');
 
 var app = angular.module('app', ['ng']);
 
-// Allow services, factories, etc. to add dependencies .
+// Allow services, factories, etc. to add dependencies
+// asynchronously
 app.addModules = function(modules) {
 
   if(!_.isArray(modules)) {

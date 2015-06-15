@@ -18,11 +18,14 @@ module.exports = {
     src: path.join(__dirname, '..', 'bower_components')
   },
   js: {
-    src: ['gulpfile.js', 'gulp/**/*.js', 'src/**/*.js']
+    src: 'project/app/**/*.js',
+    srcAll: ['gulpfile.js', 'workflow/**/*.js', 'project/app/**/*.js'],
+    specs: 'project/app/**/*-spec.js',
+    reportsDir: path.join(__dirname, '..', 'reports')
   },
   less: {
-    src: 'src/app.less',
-    targets: 'src/**/*.less',
+    src: 'project/app/index.less',
+    targets: 'project/app/**/*.less',
     dest: 'build/css',
     destMaps: './maps', // relative to dest folder
     browsers: [
@@ -35,21 +38,40 @@ module.exports = {
     src: 'css/**/*.css'
   },
   app: {
-    src: 'src/app.js',
+    src: 'project/app/index.js',
     dest: './build' // webpack requires absolute paths
   },
   vendor: {
-    src: 'src/vendor.js',
+    src: 'project/app/vendor.js',
     dest: './build'
   },
+  polyfill: {
+    name: 'polyfill.js',
+    src: [
+      'bower_components/html5shiv/dist/html5shiv.min.js',
+      'bower_components/respond/dest/respond.min.js'
+    ],
+    dest: './build/js'
+  },
   markup: {
-    src: 'src/index.html',
+    src: 'project/app/index.html',
     dest: './build'
   },
   templates: {
-    src: 'src/**/*.html',
+    src: 'project/app/**/*.html',
     base: 'src',
     dest: './build'
+  },
+  tests: {
+    src: [
+      'specs.js',
+      {
+        pattern: path.join(__dirname, '..', '/project/app/**/*-spec.js'),
+        included: false,
+        served: false,
+        watched: true
+      }
+    ]
   },
   packages: {
     src: ['./package.json', './bower.json']
