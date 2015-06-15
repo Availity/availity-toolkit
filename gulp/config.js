@@ -56,5 +56,9 @@ module.exports = {
   },
   sync: {
     src: './build'
+  },
+  deploy: {
+    src: './build',
+    dest: './deploy'
   }
 };
