@@ -1,5 +1,6 @@
 var path = require('path');
 var argv = require('minimist')(process.argv.slice(2));
+var pjson = require('../package.json');
 
 module.exports = {
   args: {
@@ -78,5 +79,9 @@ module.exports = {
   },
   sync: {
     src: './build'
+  },
+  deploy: {
+    src: './build',
+    dest: '../availity-web/projects/' + pjson.name
   }
 };
