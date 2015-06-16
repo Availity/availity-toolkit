@@ -6,6 +6,7 @@
 * [Intro](#intro)
 * [Folder Structure](#folder-structure)
 * [Working with the Toolkit](#working-with-the-toolkit)
+* [Supported Browsers](#supported-browsers)
 * [Authors](#authors)
 * [License](#license)
 
@@ -209,6 +210,16 @@ gulp watch
 ```
 
 Watches the code on your file system for any changes and triggers the necessary tasks for your code changes to synchronize to your browser. Note that this command continues to watch until you stop it by pressing Control+C.
+
+
+## Supported Browsers
+availity-toolkit is tested using the following browsers:
+
+* Internet Explorer 8 and newer
+* Google Chrome (latest version)
+* Mozilla Firefox (latest version)
+
+availity-toolkit should likely work fine with other browsers as well, though you may experience some issues.
 
 
 ## Authors
