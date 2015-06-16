@@ -217,7 +217,7 @@ Watches the code on your file system for any changes and triggers the necessary 
 gulp deploy
 ```
 
-Deploys the built assets to a deploy location specified under deploy.dest in [config.json](workflow/config.json) 
+Deploys the built assets to a location specified under deploy.dest in [config.js](workflow/config.js) 
 
 
 ## Authors
