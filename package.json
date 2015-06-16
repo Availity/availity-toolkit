@@ -1,6 +1,6 @@
 {
   "name": "availity-toolkit",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Toolkit for Angular apps on the Availity platform.",
   "private": true,
   "author": "Robert McGuinness <rob.mcguinness@availity.com>",
