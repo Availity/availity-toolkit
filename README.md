@@ -210,6 +210,15 @@ gulp watch
 
 Watches the code on your file system for any changes and triggers the necessary tasks for your code changes to synchronize to your browser. Note that this command continues to watch until you stop it by pressing Control+C.
 
+##### Deploy
+
+>
+```sh
+gulp deploy
+```
+
+Deploys the built assets to a location specified under deploy.dest in [config.js](workflow/config.js) 
+
 
 ## Authors
 
@@ -219,6 +228,8 @@ Watches the code on your file system for any changes and triggers the necessary 
 **Robert Warner**
 + [rob.warner@availity.com](rob.warner@availity.com)
 
+**Ricardo Rossi**
++ [ricardo.rossi@availity.com](ricardo.rossi@availity.com)
 
 
 ## License
