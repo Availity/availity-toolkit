@@ -1,5 +1,7 @@
 # availity-toolkit
 
+[![Join the chat at https://gitter.im/Availity/availity-toolkit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Availity/availity-toolkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > Toolkit for Angular apps on the Availity platform.
 
 ## Table of Contents
