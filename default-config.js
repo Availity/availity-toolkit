@@ -4,6 +4,9 @@ var config = require('./gulp/config');
 var developerConfig = {
 
   development: {
+    browserSync : {
+      open : true
+    },
     data: path.join(config.project.path, '/data'),
     routes: path.join(config.project.path, './routes.json'),
     servers: {
