@@ -44,13 +44,22 @@ gulp.task('server:sync', ['server:rest'], function() {
   //  route: /api
   //
   // }
+  
+  function shouldOpenBrowser() {
+    var shouldOpen = true;
+    if (typeof developerConfig.development.browserSync !== 'undefined' && typeof developerConfig.development.browserSync.open !== 'undefined') {
+      shouldOpen = developerConfig.development.browserSync.open;
+    } 
+    return shouldOpen;
+  }
+  
   var _url = _.template('http://localhost:<%= port %>/');
   var proxyUrl = _url({port: developerConfig.development.servers.web.port});
   var apiProxy = proxyMiddleware('/api', {target: proxyUrl});
 
   browserSync({
     notify: true,
-    open: true,
+    open: shouldOpenBrowser(),
     logPrefix: chalk.grey(dateformat(new Date(), 'HH:MM:ss')) + ' browersync',
     ghostMode: false,
     server: {
