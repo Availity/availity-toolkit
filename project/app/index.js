@@ -1,5 +1,7 @@
 'use strict';
 
+require("./index.less");
+
 require('jquery');
 require('angular');
 require('availity-angular');
