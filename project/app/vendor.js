@@ -12,11 +12,13 @@ require('jquery.inputmask');
 
 // utils
 require('lodash');
+require('tracekit');
 
 // angular
 require('angular');
 require('angular-sanitize');
 require('angular-ui-router');
+require('angular-shims-placeholder');
 
 // availity
 require('availity-angular');
