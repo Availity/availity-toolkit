@@ -1,6 +1,6 @@
 'use strict';
 
-require("./index.less");
+require('./index.less');
 
 require('jquery');
 require('angular');
