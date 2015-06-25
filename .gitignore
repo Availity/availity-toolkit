@@ -8,6 +8,9 @@
 /reports/
 /build/
 /css/
-workflow/webpack/stats.json
 /deploy/
+
+workflow/webpack/stats.json
+project/app/developer-config.js
+
 npm-debug.log
