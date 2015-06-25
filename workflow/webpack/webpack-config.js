@@ -127,7 +127,10 @@ if(utils.isProduction()) {
       compress: {
         drop_console: true
       },
-      output: { comments: false }
+      output: {
+        comments: false,
+        max_line_len: 500
+      }
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin()
