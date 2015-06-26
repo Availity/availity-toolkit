@@ -7,7 +7,9 @@
     "availity-angular": "~0.12.0",
     "availity-uikit": "~0.8.1",
     "html5shiv": "~3.7.2",
-    "respond": "~1.4.2"
+    "respond": "~1.4.2",
+    "blueimp-file-upload": "~9.10.1",
+    "jquery-ui": "~1.11.4"
   },
   "homepage": "https://github.com/availity/availity-toolkit",
   "keywords": [

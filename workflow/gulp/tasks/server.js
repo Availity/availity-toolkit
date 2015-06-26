@@ -50,7 +50,7 @@ gulp.task('server:sync', ['server:rest'], function() {
 
   browserSync({
     notify: true,
-    open: true,
+    open: false,
     logPrefix: chalk.grey(dateformat(new Date(), 'HH:MM:ss')) + ' browersync',
     ghostMode: false,
     server: {

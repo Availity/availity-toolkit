@@ -9,6 +9,11 @@ var pkg = require('../../package.json');
 var config = require('../config');
 var utils = require('./utils');
 
+var resolveBower = function(componentPath) {
+  return path.join(__dirname, '../../bower_components', componentPath);
+};
+
+
 var config = {
   context: path.join(config.project.path, 'project/app'),
   entry: {
@@ -39,7 +44,17 @@ var config = {
   resolve: {
     root: [path.join(config.project.path, '/project/app')],
     modulesDirectories: ['bower_components', 'node_modules'],
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json'],
+    alias: {
+      'jquery.ui.widget': resolveBower('blueimp-file-upload/js/vendor/jquery.ui.widget.js'),
+      'load-image': resolveBower('blueimp-load-image/js/load-image.js'),
+      'load-image-meta': resolveBower('blueimp-load-image/js/load-image-meta'),
+      'load-image-exif': resolveBower('blueimp-load-image/js/load-image-exif'),
+      'load-image-ios': resolveBower('blueimp-load-image/js/load-image-ios'),
+      'canvas-to-blob': resolveBower('blueimp-canvas-to-blob/js/canvas-to-blob'),
+      'tmpl': resolveBower('blueimp-tmpl/js/tmpl'),
+      'blueimp-file-upload-angular': resolveBower('blueimp-file-upload/js/jquery.fileupload-angular')
+    }
   },
   module:  {
     loaders: [

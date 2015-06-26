@@ -10,10 +10,12 @@ var app = require('./module');
 var registration = require('./registration');
 
 app.addModules([
-  'ui.router',
   'availity',
   'availity.ui',
-  'availity.ui.templates'
+  'availity.ui.templates',
+  'ui.router',
+  'blueimp.fileupload',
+  'ng.shims.placeholder'
 ]);
 
 app.controller('PageController', function($scope, AvModal, AV_GLOBALS) {
