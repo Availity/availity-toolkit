@@ -1,7 +1,7 @@
 var path = require('path');
 var config = require('./gulp/config');
 
-var developerConfig = {
+var defaultConfig = {
 
   development: {
     data: path.join(config.project.path, '/data'),
@@ -32,4 +32,4 @@ var developerConfig = {
 
 };
 
-module.exports = developerConfig;
+module.exports = defaultConfig;
