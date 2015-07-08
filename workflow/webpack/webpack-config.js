@@ -71,7 +71,12 @@ var config = {
             }
           )
       },
-      { test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?{browsers: ["last 3 versions", "ie 8", "ie 9", "> 1%"]}!less-loader')},
+      { test: /\.less$/,
+          loader: ExtractTextPlugin.extract(
+            'style-loader',
+            'css-loader!autoprefixer-loader?{browsers: ["last 3 versions", "ie 8", "ie 9", "> 1%"]}!less-loader'
+          )
+      },
       {
         // test should match the following:
         //
