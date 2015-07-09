@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
-    "availity-ekko": "^0.2.2",
+    "availity-ekko": "^0.2.5",
     "bower-webpack-plugin": "^0.1.8",
     "browser-sync": "^2.7.4",
     "chalk": "^1.0.0",
