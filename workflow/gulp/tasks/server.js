@@ -49,7 +49,7 @@ gulp.task('server:sync', ['server:rest'], function() {
   var proxyUrl = _url({port: env.config().servers.web.port});
   var apiProxy = proxyMiddleware('/api', {target: proxyUrl});
 
-  browserSync({
+  var defaults = {
     notify: true,
     open: false,
     logPrefix: chalk.grey(dateformat(new Date(), 'HH:MM:ss')) + ' browersync',
@@ -71,6 +71,10 @@ gulp.task('server:sync', ['server:rest'], function() {
         }
       ]
     }
-  });
+  };
+
+  var syncOptions = _.merge(defaults, env.options().browserSync);
+
+  browserSync(syncOptions);
 });
 
