@@ -13,8 +13,6 @@
     "disallowTrailingWhitespace": true,
     "disallowYodaConditions": true,
 
-    "maximumLineLength": 200,
-
     "requireCamelCaseOrUpperCaseIdentifiers": true,
     "requireCapitalizedConstructors": true,
     "requireCommaBeforeLineBreak": true,

@@ -8,7 +8,7 @@
         <div class="container-fluid">
         <div class="row">
             <div>
-              <h3 class="subheader panel-header">Profile</h3>
+              <h3 class="subheader panel-header">User Profile</h3>
 
               <div class="form-group">
                 <label for="name">
@@ -27,12 +27,26 @@
                   id="name"
                   data-ng-model="reg.name"
                   data-av-val-field="name"
+                  placeholder="Enter 1 letter to see validation in action"
                 >
                 <p data-av-val-container></p>
               </div>
 
               <div class="form-group">
-                <label for="dropdownStates1">States</label>
+                <label for="noIcon">Date of Birth</label>
+                <input type="text"
+                 class="form-control"
+                 id="noIcon"
+                 data-ng-model="reg.date"
+                 data-av-datepicker
+                 data-av-val-field="date"
+                 placeholder="When were you born?"
+                />
+                <p data-av-val-container></p>
+              </div>
+
+              <div class="form-group">
+                <label for="dropdownStates1">Favorite State</label>
                 <select
                   id="dropdownStates1"
                   class="form-control select2"
@@ -46,18 +60,6 @@
                 </select>
               </div>
 
-              <div class="form-group">
-                <label for="noIcon">Date of Birth</label>
-                <input type="text"
-                 class="form-control"
-                 id="noIcon"
-                 data-ng-model="reg.date"
-                 data-av-datepicker
-                 data-av-val-field="date"
-                />
-                <p data-av-val-container></p>
-              </div>
-
             </div>
         </div>
         </div>
@@ -66,7 +68,6 @@
 
     <div class="form-controls">
       <button type="button" class="btn btn-default">Clear</button>
-      <button type="button" class="btn btn-default">Cancel</button>
       <button
         type="button"
         class="btn btn-info"
@@ -75,6 +76,12 @@
       </button>
       <input type="submit" class="btn btn-primary form-controls-right" data-ng-disabled="demoForm.$invalid" value="Next">
     </div>
-  </div>
+  </form>
 
-</form>
+  <div ng-include="'registration/templates/notice.html'"></div>
+
+</div>
+
+
+
+

@@ -1,4 +1,7 @@
 // Credit to https://github.com/greypants/gulp-starter
+//
+var env = require('../env');
+env.load(false);
 
 var requireDir = require('require-dir');
 

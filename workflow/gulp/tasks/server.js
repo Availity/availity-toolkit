@@ -7,8 +7,7 @@ var nodemon = require('gulp-nodemon');
 var _ = require('lodash');
 var path = require('path');
 
-var config = require('../../config');
-var developerConfig = require(path.resolve(config.project.path, 'project/config/developer-config'));
+var env = require('../../env');
 
 gulp.task('server', ['server:rest', 'server:sync']);
 
@@ -17,13 +16,15 @@ gulp.task('server:rest', function () {
     script: 'index.js',
     ext: 'json',
     watch: [
-      path.join(config.project.path, 'project/config/routes.json'),
-      path.join(config.project.path, 'project/data')
+      path.join(env.config().routes),
+      path.join(env.config().data)
     ],
-    // nodeArgs: ['--debug'],
-    env: { 'NODE_ENV': 'development' }
+    args: ['--silence'],
+    env: {
+      'NODE_ENV': 'development'
+    }
   }).on('restart', function () {
-    console.log('server restarted!');
+    console.log('Ekko server restarted!');
   });
 });
 
@@ -45,12 +46,12 @@ gulp.task('server:sync', ['server:rest'], function() {
   //
   // }
   var _url = _.template('http://localhost:<%= port %>/');
-  var proxyUrl = _url({port: developerConfig.development.servers.web.port});
+  var proxyUrl = _url({port: env.config().servers.web.port});
   var apiProxy = proxyMiddleware('/api', {target: proxyUrl});
 
-  browserSync({
+  var defaults = {
     notify: true,
-    open: true,
+    open: false,
     logPrefix: chalk.grey(dateformat(new Date(), 'HH:MM:ss')) + ' browersync',
     ghostMode: false,
     server: {
@@ -70,6 +71,10 @@ gulp.task('server:sync', ['server:rest'], function() {
         }
       ]
     }
-  });
+  };
+
+  var syncOptions = _.merge(defaults, env.options().browserSync);
+
+  browserSync(syncOptions);
 });
 

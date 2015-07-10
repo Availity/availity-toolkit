@@ -4,7 +4,7 @@ var runSequence = require('run-sequence').use(gulp);
 gulp.task('default', function() {
   runSequence(
     'clean:build',
-    ['less', 'copy', 'concat'],
+    ['copy', 'concat'],
     'build',
     'server',
     'watch'

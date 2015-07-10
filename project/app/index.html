@@ -14,12 +14,10 @@
     {% for (var css in o.htmlWebpackPlugin.files.css) { %}
     <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
     {% } %}
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/index.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="polyfill.js"></script>
+      <script src="js/polyfill.js"></script>
     <![endif]-->
   </head>
   <body data-ng-app="app" class="body">

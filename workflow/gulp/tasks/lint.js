@@ -2,17 +2,16 @@ var gulp = require('gulp');
 var glob = require('glob');
 var gulpif = require('gulp-if');
 var using = require('gulp-using');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var jscs = require('gulp-jscs');
 
 var config = require('../../config');
 
 gulp.task('lint', function () {
 
-  var jshint = require('gulp-jshint');
-  var stylish = require('jshint-stylish');
-  var jscs = require('gulp-jscs');
-
   gulp.src(config.js.src)
-  .pipe(gulpif(config.args.verbose, using({prefix:'Task [lint] using'})))
+    .pipe(gulpif(config.args.verbose, using({prefix:'Task [lint] using'})))
     .pipe(jscs())
     .pipe(jshint())
     .pipe(jshint.reporter(stylish));
@@ -40,6 +39,14 @@ var _plato = function(done) {
     }
   });
 };
+
+gulp.task('lint:workflow', function() {
+  return gulp.src(config.js.srcAll)
+    .pipe(gulpif(config.args.verbose, using({prefix:'Task [lint] using'})))
+    .pipe(jscs())
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish));
+});
 
 gulp.task('complexity', function(done) {
   _plato(done);

@@ -59,7 +59,7 @@ module.exports = {
     dest: './build'
   },
   templates: {
-    src: 'project/app/**/*.html',
+    src: ['!project/app/index.html', 'project/app/**/*.html'],
     base: 'src',
     dest: './build'
   },
