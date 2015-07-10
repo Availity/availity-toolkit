@@ -11,6 +11,6 @@
 /deploy/
 
 workflow/webpack/stats.json
-project/app/config/developer-config.js
+project/config/developer-config.js
 
 npm-debug.log
