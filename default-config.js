@@ -1,11 +1,11 @@
 var path = require('path');
-var config = require('./gulp/config');
+var config = require('./workflow/config');
 
 var defaultConfig = {
 
   development: {
-    data: path.join(config.project.path, '/data'),
-    routes: path.join(config.project.path, './routes.json'),
+    data: path.join(config.project.path, 'project/data'),
+    routes: path.join(config.project.path, 'project/config/routes.json'),
     servers: {
       web: {
         host: '0.0.0.0',
@@ -25,8 +25,24 @@ var defaultConfig = {
         port: 9999
       }
     },
-    data: path.join(__dirname, '/data'),
-    routes: path.join(__dirname, '/routes.json'),
+    data: path.join(config.project.path, 'project/data'),
+    routes: path.join(config.project.path, 'project/config/routes.json'),
+    directory: path.join(__dirname, '/build')
+  },
+
+  testing: {
+    latency: 300,
+    user: null,
+    cache: 86400000,
+    limit: '50mb',
+    servers: {
+      web: {
+        host: "0.0.0.0",
+        port: 9999
+      }
+    },
+    data: path.join(config.project.path, 'project/data'),
+    routes: path.join(config.project.path, 'project/config/routes.json'),
     directory: path.join(__dirname, '/build')
   }
 
