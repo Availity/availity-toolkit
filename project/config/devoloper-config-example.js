@@ -33,7 +33,37 @@ var developerConfig = {
           }
         ]
       },
-      legacy : {
+      legacyApi : {
+        proxy : true,
+        port : 8281,
+        headers: {
+          RemoteUser: 'jdoe'
+        },
+        proxies : [
+          {
+            context : '/api\/v1\/uploads',
+            rewrite : {
+              from : '^/api/v1/uploads',
+              to : '/aries/api/v1/uploads'
+            }
+          },
+          {
+            context : '/api\/v1\/attachments',
+            rewrite : {
+              from : '^/api/v1/attachments',
+              to : '/aries/api/v1/attachments'
+            }
+          },
+          {
+            context : '/api\/v1\/receiver-attachments',
+            rewrite : {
+              from : '^/api/v1/receiver-attachments',
+              to : '/aries/api/v1/receiver-attachments'
+            }
+          }
+        ]
+      },
+      "legacyWeb" : {
         proxy : true,
         port : 8080,
         context : '/availity'
