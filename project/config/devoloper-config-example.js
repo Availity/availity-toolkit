@@ -9,6 +9,34 @@ var developerConfig = {
       web: {
         host: '0.0.0.0',
         port: 9999
+      },
+      api : {
+        proxy : true,
+        port : 8280,
+        headers: {
+          RemoteUser: 'jdoe'
+        },
+        proxies : [
+          {
+            context : '/api',
+            rewrite : {
+              from : '^/api',
+              to : ''
+            }
+          },
+          {
+            context : '/public/api',
+            rewrite : {
+              from : '^/public/api',
+              to : ''
+            }
+          }
+        ]
+      },
+      legacy : {
+        proxy : true,
+        port : 8080,
+        context : '/availity'
       }
     }
   },
