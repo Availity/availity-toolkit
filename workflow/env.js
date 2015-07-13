@@ -1,4 +1,5 @@
 var emoji = require('node-emoji');
+var path = require('path');
 var _ = require('lodash');
 var argv = require('minimist')(process.argv.slice(2));
 var chalk = require('chalk');
@@ -11,7 +12,7 @@ var env = {
   load: function() {
 
     // DEFAULT CONFIG
-    var defaultConfig = file('../default-config');
+    var defaultConfig = file(path.join(__dirname, '../default-config'));
     if(!defaultConfig) {
 
       if(!argv.silence) {
@@ -19,11 +20,11 @@ var env = {
         logger.error(emoji.get('no_entry_sign') + '  see https://github.com/Availity/availity-toolkit for further instructions');
       }
 
-      throw Error();
+      process.exit(1);
     }
 
     // DEVELOPER CONFIG
-    var developerConfig = file('../project/config/developer-config');
+    var developerConfig = file(path.join(__dirname, '../project/config/developer-config'));
     if(!developerConfig && (process.env.NODE_ENV !== 'production' || process.env.NODE_ENV !== 'testing')) {
 
       if(!argv.silence) {

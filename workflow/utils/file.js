@@ -4,9 +4,10 @@ module.exports = function(file, raw) {
   var _file = null;
   try {
     if(raw) {
-      return fs.readFileSync(file, 'utf8');
+      _file =  fs.readFileSync(file, 'utf8');
+    }else {
+      _file = require(file);
     }
-    _file = require(file);
   }catch(err) {
     // no op
   }

@@ -13,7 +13,6 @@ var resolveBower = function(componentPath) {
   return path.join(__dirname, '../../bower_components', componentPath);
 };
 
-
 var config = {
   context: path.join(config.project.path, 'project/app'),
   entry: {
