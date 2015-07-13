@@ -19,20 +19,19 @@ function space(json) {
 module.exports  = function(cli) {
 
   var attrs = {
-    name: cli.meta.name,
-    description: cli.meta.description,
-    version: cli.meta.version,
-    keywords: cli.meta.keywords,
-    url: cli.meta.url,
+    name: cli.answers.name,
+    description: cli.answers.description,
+    version: cli.answers.version,
+    keywords: cli.answers.keywords,
+    url: cli.answers.url,
     author: {
-      name: cli.meta.author,
-      email: cli.meta.email
+      name: cli.answers.author,
+      email: cli.answers.email
     },
     private: true
   };
 
-
-  _.forEach(cli.meta, function(data, key) {
+  _.forEach(cli.manifests, function(data, key) {
 
     var payload = _.merge({}, data.json, attrs);
     var raw = JSON.stringify(payload, null, data.raw ? space(data.raw) : 2) + possibleNewline(data.raw);

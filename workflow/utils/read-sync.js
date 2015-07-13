@@ -7,7 +7,7 @@ module.exports = function() {
   var bower = file(path.join(process.cwd(), 'bower.json'), true);
   var availity = file(path.join(process.cwd(), 'availity.json'), true);
 
-  var meta = {
+  var manifests = {
     package: {
       json: JSON.parse(pkg),
       raw: pkg
@@ -22,6 +22,6 @@ module.exports = function() {
     }
   };
 
-  return meta;
+  return manifests;
 
 };

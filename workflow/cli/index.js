@@ -4,16 +4,16 @@ var meow = require('meow');
 var _ = require('lodash');
 
 var readSync = require('../utils/read-sync');
-var meta = readSync();
+var manifests = readSync();
 
-program.version(meta.package.json.version);
+program.version(manifests.package.json.version);
 
 var cli = meow({
   help: false,
-  pkg: meta.package.json
+  pkg: manifests.package.json
 });
 cli.program = program;
-cli.meta = meta;
+cli.manifests = manifests;
 
 var commands = require('require-dir')('./commands', { recurse: true });
 _.forEach(commands, function(command) {

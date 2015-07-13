@@ -109,7 +109,7 @@ module.exports = function (cli) {
       ];
 
       inquirer.prompt(questions, function(answers) {
-        cli.meta = answers;
+        cli.answers = answers;
         sync(cli);
       });
 
