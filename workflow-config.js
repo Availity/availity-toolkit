@@ -1,6 +1,6 @@
 var path = require('path');
 var argv = require('minimist')(process.argv.slice(2));
-var pjson = require('../package.json');
+var pjson = require('./package.json');
 
 module.exports = {
   args: {
@@ -8,7 +8,7 @@ module.exports = {
     environment: process.env.NODE_ENV || 'development'
   },
   project: {
-    path: path.resolve(__dirname, '..')
+    path: __dirname
   },
   readme: {
     src: ['docs/readme/readme.config.md'],
@@ -16,13 +16,13 @@ module.exports = {
     dest: './'
   },
   bower: {
-    src: path.join(__dirname, '..', 'bower_components')
+    src: path.join(__dirname,  'bower_components')
   },
   js: {
     src: 'project/app/**/*.js',
     srcAll: ['gulpfile.js', 'workflow/**/*.js', 'project/app/**/*.js'],
     specs: 'project/app/**/*-spec.js',
-    reportsDir: path.join(__dirname, '..', 'reports')
+    reportsDir: path.join(__dirname,  'reports')
   },
   less: {
     src: 'project/app/index.less',
@@ -67,7 +67,7 @@ module.exports = {
     src: [
       'specs.js',
       {
-        pattern: path.join(__dirname, '..', '/project/app/**/*-spec.js'),
+        pattern: path.join(__dirname,  '/project/app/**/*-spec.js'),
         included: false,
         served: false,
         watched: true
