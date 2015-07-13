@@ -67,7 +67,6 @@
     "jasmine-core": "^2.3.4",
     "joi": "^6.5.0",
     "jshint-stylish": "^2.0.0",
-    "jsonfile": "^2.2.1",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.2.0",
     "karma-coverage": "^0.4.2",
