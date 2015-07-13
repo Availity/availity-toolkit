@@ -8,3 +8,8 @@ gulp.task('clean:build', function(cb) {
   var del = require('del');
   del([config.app.dest], cb);
 });
+
+gulp.task('clean:dist', function(cb) {
+  var del = require('del');
+  del([config.app.dist], cb);
+});

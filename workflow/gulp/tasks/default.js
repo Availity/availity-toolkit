@@ -5,7 +5,7 @@ gulp.task('default', function() {
   runSequence(
     'clean:build',
     ['copy', 'concat'],
-    'build',
+    process.env.NODE_ENV === 'production' ? 'build:prod' : 'build:dev',
     'server',
     'watch'
   );

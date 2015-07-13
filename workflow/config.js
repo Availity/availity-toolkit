@@ -40,7 +40,8 @@ module.exports = {
   },
   app: {
     src: 'project/app/index.js',
-    dest: './build' // webpack requires absolute paths
+    dest: './build', // webpack requires absolute paths,
+    dist: './dist'
   },
   vendor: {
     src: 'project/app/vendor.js',
@@ -56,7 +57,7 @@ module.exports = {
   },
   markup: {
     src: 'project/app/index.html',
-    dest: './build'
+    dest: process.env.NODE_ENV === 'production' ? './dist' : './build'
   },
   templates: {
     src: ['!project/app/index.html', 'project/app/**/*.html'],
@@ -78,7 +79,7 @@ module.exports = {
     src: ['./package.json', './bower.json']
   },
   sync: {
-    src: './build'
+    src: process.env.NODE_ENV === 'production' ? './dist' : './build'
   },
   deploy: {
     src: './build',

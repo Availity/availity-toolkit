@@ -34,6 +34,7 @@ gulp.task('server:sync', ['server:rest'], function() {
   var path = require('path');
   var fs = require('fs');
   var config = require('../../config');
+  var compress = require('compression');
 
   // Parse out url and create the following config:
   //
@@ -61,7 +62,10 @@ gulp.task('server:sync', ['server:rest'], function() {
         // Middleware #1: proxy
         apiProxy,
 
-        // Middleware #2: Allow web page requests without .html file extension in URLs
+        // Middleware #2: gzip
+        compress(),
+
+        // Middleware #3: Allow web page requests without .html file extension in URLs
         function(req, res, next) {
           var uri = url.parse(req.url);
           if(uri.pathname.length > 1 && path.extname(uri.pathname) === '' && fs.existsSync(config.sync.src + uri.pathname + '.html')) {

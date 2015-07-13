@@ -142,19 +142,21 @@ var config = {
 if(utils.isProduction()) {
 
   config.plugins.push(
+    new webpack.optimize.OccurenceOrderPlugin(true),
     //jscs:disable
     new webpack.optimize.UglifyJsPlugin({
       mangle: false,
+      sourceMap: false,
       compress: {
-        drop_console: true
+        drop_console: true,
+        warnings: false
       },
       output: {
         comments: false,
-        max_line_len: 500
+        max_line_len: 1000
       }
     }),
     //jscs:enable
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin()
   );
 }
