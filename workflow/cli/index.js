@@ -6,13 +6,14 @@ var _ = require('lodash');
 var readSync = require('../utils/read-sync');
 var meta = readSync();
 
-program.version(meta.pkg.version);
+program.version(meta.package.json.version);
 
 var cli = meow({
   help: false,
-  pkg: meta.pkg
+  pkg: meta.package.json
 });
 cli.program = program;
+cli.package = meta.package;
 cli.bower = meta.bower;
 cli.availity = meta.availity;
 

@@ -1,6 +1,6 @@
 var inquirer = require("inquirer");
 var semver = require('semver');
-var sync = require('../../utils/sync');
+var sync = require('../../utils/write-sync');
 var Joi = require('joi');
 
 

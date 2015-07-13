@@ -1,16 +1,25 @@
 var path = require('path');
-var jsonfile = require('jsonfile');
+var file = require('../utils/file');
 
-module.export = function() {
+module.exports = function() {
 
-  var pkg = jsonfile.readFileSync(path.join(process.cwd(), 'package.json'));
-  var bower = jsonfile.readFileSync(path.join(process.cwd(), 'bower.json'));
-  var availity = jsonfile.readFileSync(path.join(process.cwd(), 'availity.json'));
+  var pkg = file(path.join(process.cwd(), 'package.json'), true);
+  var bower = file(path.join(process.cwd(), 'bower.json'), true);
+  var availity = file(path.join(process.cwd(), 'availity.json'), true);
 
   return {
-    pkg: pkg,
-    bower: bower,
-    availity: availity
+    package: {
+      json: JSON.parse(pkg),
+      raw: pkg
+    },
+    bower: {
+      json: JSON.parse(bower),
+      raw: bower
+    },
+    availity: {
+      json: JSON.parse(availity),
+      raw: availity
+    }
   };
 
 };

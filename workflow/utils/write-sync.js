@@ -1,7 +1,18 @@
 var _ = require('lodash');
-var fs = require('fs');
 var path = require('path');
-var jsonfile = require('jsonfile');
+var fs = require('fs');
+
+// Preserver new line at the end of a file
+function possibleNewline(json) {
+  var lastChar = (json.slice(-1) === '\n') ? '\n' : '';
+  return lastChar;
+}
+
+// Figured out which "space" params to be used for JSON.stringfiy.
+function space(json) {
+  var match = json.match(/^(?:(\t+)|( +))"/m);
+  return match ? (match[1] ? '\t' : match[2].length) : '';
+}
 
 
 module.exports  = function(cli) {
@@ -19,12 +30,14 @@ module.exports  = function(cli) {
     private: true
   };
 
-  cli.availity = _.merge(cli.availity, attrs);
-  cli.pkg = _.merge(cli.pkg, attrs);
-  cli.bower = _.merge(cli.pkg, attrs);
 
-  jsonfile.writeFileSync(path.join(process.cwd(), 'package.json'));
-  jsonfile.writeFileSync(path.join(process.cwd(), 'bower.json'));
-  jsonfile.writeFileSync(path.join(process.cwd(), 'availity.json'));
+  _.forEach([cli.availity, cli.package, cli.bower], function(data, key) {
+    
+    var payload = _.merge({}, data.json, attrs);
+    var raw = JSON.stringify(payload, null, space(data.raw)) + possibleNewline(data.raw);
+
+    fs.writeFileSync(path.join(process.cwd(), key+'.json'), raw, 'utf8');
+
+  });
 
 };
