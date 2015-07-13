@@ -7,7 +7,7 @@ module.exports = function() {
   var bower = file(path.join(process.cwd(), 'bower.json'), true);
   var availity = file(path.join(process.cwd(), 'availity.json'), true);
 
-  return {
+  var meta = {
     package: {
       json: JSON.parse(pkg),
       raw: pkg
@@ -21,5 +21,7 @@ module.exports = function() {
       raw: availity
     }
   };
+
+  return meta;
 
 };

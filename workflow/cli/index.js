@@ -13,9 +13,7 @@ var cli = meow({
   pkg: meta.package.json
 });
 cli.program = program;
-cli.package = meta.package;
-cli.bower = meta.bower;
-cli.availity = meta.availity;
+cli.meta = meta;
 
 var commands = require('require-dir')('./commands', { recurse: true });
 _.forEach(commands, function(command) {

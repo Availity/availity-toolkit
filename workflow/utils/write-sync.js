@@ -4,7 +4,7 @@ var fs = require('fs');
 
 // Preserver new line at the end of a file
 function possibleNewline(json) {
-  var lastChar = (json.slice(-1) === '\n') ? '\n' : '';
+  var lastChar = (json && json.slice(-1) === '\n') ? '\n' : '';
   return lastChar;
 }
 
@@ -32,7 +32,7 @@ module.exports  = function(cli) {
   };
 
 
-  _.forEach([cli.availity, cli.package, cli.bower], function(data, key) {
+  _.forEach(cli.meta, function(data, key) {
 
     var payload = _.merge({}, data.json, attrs);
     var raw = JSON.stringify(payload, null, data.raw ? space(data.raw) : 2) + possibleNewline(data.raw);
