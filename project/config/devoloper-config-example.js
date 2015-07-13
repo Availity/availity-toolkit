@@ -9,6 +9,64 @@ var developerConfig = {
       web: {
         host: '0.0.0.0',
         port: 9999
+      },
+      api : {
+        proxy : true,
+        port : 8280,
+        headers: {
+          RemoteUser: 'jdoe'
+        },
+        proxies : [
+          {
+            context : '/api',
+            rewrite : {
+              from : '^/api',
+              to : ''
+            }
+          },
+          {
+            context : '/public/api',
+            rewrite : {
+              from : '^/public/api',
+              to : ''
+            }
+          }
+        ]
+      },
+      legacyApi : {
+        proxy : true,
+        port : 8281,
+        headers: {
+          RemoteUser: 'jdoe'
+        },
+        proxies : [
+          {
+            context : '/api\/v1\/uploads',
+            rewrite : {
+              from : '^/api/v1/uploads',
+              to : '/aries/api/v1/uploads'
+            }
+          },
+          {
+            context : '/api\/v1\/attachments',
+            rewrite : {
+              from : '^/api/v1/attachments',
+              to : '/aries/api/v1/attachments'
+            }
+          },
+          {
+            context : '/api\/v1\/receiver-attachments',
+            rewrite : {
+              from : '^/api/v1/receiver-attachments',
+              to : '/aries/api/v1/receiver-attachments'
+            }
+          }
+        ]
+      },
+      "legacyWeb" : {
+        proxy : true,
+        port : 8080,
+        context : '/availity'
       }
     }
   },
