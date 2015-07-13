@@ -1,28 +1,17 @@
-// var path = require('path');
 var emoji = require('node-emoji');
 var _ = require('lodash');
 var argv = require('minimist')(process.argv.slice(2));
 var chalk = require('chalk');
 
 var logger = require('./utils/logger');
+var file  = require('./utils/file');
 
 var env = {
-
-  getFile: function(file) {
-    var _file = null;
-    try {
-      _file = require(file);
-    }catch(err) {
-      // no op
-    }
-
-    return _file;
-  },
 
   load: function() {
 
     // DEFAULT CONFIG
-    var defaultConfig = this.getFile('../default-config');
+    var defaultConfig = file('../default-config');
     if(!defaultConfig) {
 
       if(!argv.silence) {
@@ -34,7 +23,7 @@ var env = {
     }
 
     // DEVELOPER CONFIG
-    var developerConfig = this.getFile('../project/config/developer-config');
+    var developerConfig = file('../project/config/developer-config');
     if(!developerConfig && (process.env.NODE_ENV !== 'production' || process.env.NODE_ENV !== 'testing')) {
 
       if(!argv.silence) {
