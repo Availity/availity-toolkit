@@ -8,6 +8,7 @@ function possibleNewline(json) {
   return lastChar;
 }
 
+// https://github.com/stevelacy/gulp-bump/blob/dad1d960e9b1f6b480c909a23ba7d118c436ce6f/index.js#L83
 // Figured out which "space" params to be used for JSON.stringfiy.
 function space(json) {
   var match = json.match(/^(?:(\t+)|( +))"/m);
@@ -32,9 +33,9 @@ module.exports  = function(cli) {
 
 
   _.forEach([cli.availity, cli.package, cli.bower], function(data, key) {
-    
+
     var payload = _.merge({}, data.json, attrs);
-    var raw = JSON.stringify(payload, null, space(data.raw)) + possibleNewline(data.raw);
+    var raw = JSON.stringify(payload, null, data.raw ? space(data.raw) : 2) + possibleNewline(data.raw);
 
     fs.writeFileSync(path.join(process.cwd(), key+'.json'), raw, 'utf8');
 
