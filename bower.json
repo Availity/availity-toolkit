@@ -2,21 +2,5 @@
   "name": "availity-toolkit",
   "version": "0.2.0",
   "description": "Toolkit for Angular apps on the Availity platform.",
-  "license": "MIT",
-  "dependencies": {
-    "availity-angular": "~0.11.0",
-    "availity-uikit": "~0.8.0",
-    "html5shiv": "~3.7.2",
-    "respond": "~1.4.2"
-  },
-  "homepage": "https://github.com/availity/availity-toolkit",
-  "keywords": [
-    "angular"
-  ],
-  "resolutions": {
-    "bootstrap": "~3.3.4"
-  },
-  "devDependencies": {
-    "angular-mocks": "1.2.28"
-  }
+  "license": "MIT"
 }
