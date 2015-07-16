@@ -1,12 +1,14 @@
+var rootVars = {};
 
-var gulp = require('gulp');
+rootVars.gulp = require('gulp');
+rootVars.karma = require('karma');
+
 var workflow = require('availity-workflow');
+workflow.gulp(rootVars);
 
-workflow.gulp(gulp);
+rootVars.gulp.task('default', ['av:default']);
 
-gulp.task('default', ['av:default']);
-
-gulp.task('lint', ['av:lint']);
+rootVars.gulp.task('lint', ['av:lint']);
 
 
 
