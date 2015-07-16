@@ -1,32 +1,38 @@
 var webpack = require('webpack');
 var webpackConfig = require('../webpack/webpack-config');
 var BowerWebpackPlugin = require('bower-webpack-plugin');
+
 var _config = require('../config');
 
 webpackConfig.cache = true;
-webpackConfig.module.postLoaders = [{
-  test: /\.js$/,
-  exclude: /(-spec|node_modules|bower_components)/,
-  loader: 'istanbul-instrumenter'
-}];
-
-// Dynamically build preprocessors instructions from config.js
-var _preprocessors = {};
-_preprocessors['specs.js'] = ['webpack', 'sourcemap'];
-_preprocessors[_config.js.specs] = ['webpack', 'sourcemap'];
+// webpackConfig.module.postLoaders = [{
+//   test: /\.js$/,
+//   exclude: /(-spec|node_modules|bower_components)/,
+//   loader: 'istanbul-instrumenter'
+// }];
 
 module.exports = function (config) {
   config.set({
-    basePath: '',
+    basePath: '.',
     frameworks: ['jasmine'],
-    files: _config.tests.src,
-    preprocessors: _preprocessors,
+    files: [
+      'specs.js'
+    ],
+    preprocessors: {
+      'specs.js': ['webpack', 'sourcemap']
+    },
     webpack: {
+
       resolve: webpackConfig.resolve,
+
       module: webpackConfig.module,
-      devtool: 'eval',
+
+      devtool: 'inline-source-map',
+
       cache: true,
+
       plugins: [
+
         new webpack.ProvidePlugin({
           $: 'jquery',
           jQuery: 'jquery',
@@ -42,18 +48,19 @@ module.exports = function (config) {
             /select2.*\.css/
           ]
         })
+
       ]
     },
+
     webpackServer: {
-      noInfo: true,
-      quiet: true,
-      stats: true
+      progresss: true,
+      noInfo: false,
+      quiet: false,
+      stats: false
     },
-    exclude: [
-      '*.less',
-      '*.html'
-    ],
+
     reporters: ['mocha', 'coverage'],
+
     coverageReporter: {
       dir: _config.js.reportsDir,
       subdir: function (browser) {
@@ -65,11 +72,17 @@ module.exports = function (config) {
         {type: 'html'}
       ]
     },
+
     port: 9876,
+
     colors: true,
+
     logLevel: config.LOG_INFO,
+
     autoWatch: false,
+
     browsers: ['PhantomJS'],
+
     singleRun: true,
 
     // List plugins explicitly, since auto-loading karma-webpack won't work here
