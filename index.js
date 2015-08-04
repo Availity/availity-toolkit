@@ -6,8 +6,3 @@ var ekko = new Ekko();
 ekko.start(developerConfig);
 
 
-// var workflow = require('../availity-workflow');
-
-// workflow.cli();
-
-
