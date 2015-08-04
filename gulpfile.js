@@ -3,7 +3,7 @@ var rootVars = {};
 rootVars.gulp = require('gulp');
 
 var workflow = require('availity-workflow');
-workflow.gulp(rootVars);
+workflow.use(rootVars);
 
 rootVars.gulp.task('default', ['av:default']);
 
