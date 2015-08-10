@@ -4,6 +4,8 @@ require('jquery');
 require('angular');
 require('availity-angular');
 
+require('./index.less');
+
 var app = require('./module');
 var registration = require('./registration');
 
