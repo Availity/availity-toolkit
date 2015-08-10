@@ -3,6 +3,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BowerWebpackPlugin = require('bower-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var BlessPlugin = require('bless-webpack-plugin');
 
 var pkg = require('../../package.json');
 
@@ -114,6 +115,10 @@ var config = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       _: 'lodash'
+    }),
+
+    new BlessPlugin({
+      imports:true
     }),
 
     new HtmlWebpackPlugin({
