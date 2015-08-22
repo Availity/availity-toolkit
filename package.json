@@ -20,7 +20,11 @@
     {
       "name": "Robert Warner",
       "email": "rob.warner@availity.com"
-    }
+    },
+    {
+      "name": "Kasey Powers",
+      "email": "Kasey.Powers@availity.com"
+    },
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
