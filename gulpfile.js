@@ -11,6 +11,7 @@ workflow.use({
 
 gulp.task('default', ['av:default']);
 gulp.task('lint', ['av:lint']);
+gulp.task('test', ['av:test']);
 
 
 
