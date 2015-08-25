@@ -53,7 +53,7 @@ module.exports = {
       'bower_components/html5shiv/dist/html5shiv.min.js',
       'bower_components/respond/dest/respond.min.js'
     ],
-    dest: './build/js'
+    dest: process.env.NODE_ENV === 'production' ? './dist/js' : './build/js'
   },
   markup: {
     src: 'project/app/index.html',
