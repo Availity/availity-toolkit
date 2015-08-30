@@ -3,28 +3,40 @@
 > Toolkit for Angular apps on the Availity platform.
 
 ## Table of Contents
+* [Requirements](#require)
 * [Intro](#intro)
 * [Folder Structure](#folder-structure)
 * [Working with the Toolkit](#working-with-the-toolkit)
 * [Authors](#authors)
 * [License](#license)
 
+# Requirements
+
+* [node.js](https://nodejs.org/download/)
+* [git](http://git-scm.com/downloads)
+* [gulp](http://gulpjs.com/) `npm install -g gulp`
+* [bower](http://bower.io/) `npm install -g bower`
+
 
 ## Intro
+
 The Availity Toolkit assembles several Availity projects that make developing for the Availity platform easier. These projects include:
 
-* [Availity Angular SDK](https://github.com/Availity/availity-angular)
-* [Availity Ekko](https://github.com/Availity/availity-ekko)
-* [Availity UIKit](https://github.com/Availity/availity-uikit)
+* [availtiy-angular](https://github.com/Availity/availity-angular)
+* [avality-ekko](https://github.com/Availity/availity-ekko)
+* [availity-uikit](https://github.com/Availity/availity-uikit)
+* [availity-workflow](https://github.com/Availity/availity-workflow)
 
-Follow the above links to see more information about each project.
+# Getting Started
+
+* `git clone ttps://github.com/Availity/availity-toolkit`
+* `cd availity-toolkit`
+* run `npm install`
+* run `av init`
 
 ## Folder Structure
 
-#### Folder Structure
-
 We encourage you to organize your project files by feature.
-
 
 ##### Good
 
@@ -72,29 +84,6 @@ js/
 │   └── login.html
 ```
 
-## Working with the Toolkit
-
-The Availity Toolkit uses [Gulp](http://gulpjs.com) to automate your workflow. You should have installed Gulp when you installed [Availity Command-line (CLI)](https://github.com/Availity/availity-cli). You can verify by opening a terminal or command prompt and typing:
-
->
-```sh
-availity doctor
-```
-
-You should see output like this:
-
->
-```sh
-Checking for bower . . . OK
-Checking for gulp . . . OK
-Checking for git . . . OK
-```
-
-If you don't see "OK" for each line in the output, please install the required tools before proceeding with the Availity Toolkit.
-
-#### Workflow
-
-please see Availity-Workflow for gulp information and how to set it up with toolkit.
 
 ## Authors
 
