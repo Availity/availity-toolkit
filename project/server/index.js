@@ -1,6 +1,6 @@
 var workflow = require('availity-workflow');
-//hapi plugin goes here
-module.exports.register = function(server,options,next){
+
+module.exports.register = function(server, options, next){
 
   server.register({
     register: workflow.plugin()
