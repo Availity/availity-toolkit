@@ -1,12 +1,12 @@
 # availity-toolkit
 
-> Toolkit for Angular apps on the Availity platform.
+> Starter project for Angular apps on the Availity platform.
 
 ## Table of Contents
 * [Requirements](#require)
 * [Intro](#intro)
 * [Folder Structure](#folder-structure)
-* [Working with the Toolkit](#working-with-the-toolkit)
+* [Getting Started](#getting-started)
 * [Authors](#authors)
 * [License](#license)
 
@@ -14,13 +14,15 @@
 
 * [node.js](https://nodejs.org/download/)
 * [git](http://git-scm.com/downloads)
-* [gulp](http://gulpjs.com/) `npm install -g gulp`
-* [bower](http://bower.io/) `npm install -g bower`
+* [gulp](http://gulpjs.com/) 
+    * `npm install -g gulp`
+* [bower](http://bower.io/) 
+    * `npm install -g bower`
 
 
 ## Intro
 
-The Availity Toolkit assembles several Availity projects that make developing for the Availity platform easier. These projects include:
+The Availity Toolkit assembles several Availity projects that make developing for web applications on Availity platform easier. These projects include:
 
 * [availtiy-angular](https://github.com/Availity/availity-angular)
 * [avality-ekko](https://github.com/Availity/availity-ekko)
@@ -31,8 +33,10 @@ The Availity Toolkit assembles several Availity projects that make developing fo
 
 * `git clone ttps://github.com/Availity/availity-toolkit`
 * `cd availity-toolkit`
-* run `npm install`
-* run `av init`
+* `npm install`
+* `av init`
+
+> The README.md file is your documentation.
 
 ## Folder Structure
 
@@ -40,6 +44,7 @@ We encourage you to organize your project files by feature.
 
 ##### Good
 
+>
 ```
 ├── orders/
 |   ├── tests/
@@ -67,6 +72,7 @@ We encourage you to organize your project files by feature.
 
 ##### Bad
 
+>
 ```
 js/
 ├── controllers/
@@ -94,4 +100,5 @@ js/
 + [rob.warner@availity.com](rob.warner@availity.com)
 
 ## License
+
 Copyright (c) 2015 Availity, LLC
