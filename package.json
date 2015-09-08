@@ -31,8 +31,6 @@
     "postinstall": "bower install"
   },
   "dependencies": {
-    "gulp": "^3.9.0",
-    "karma": "0.12.37",
-    "lodash": "^3.10.0"
+    "gulp": "^3.9.0"
   }
 }
