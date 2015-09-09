@@ -1,10 +1,10 @@
-/*global it, expect, describe, beforeEach, angular */
+/* global it, expect, describe, beforeEach, angular */
+
+'use strict';
 
 var app = require('../registration-service');
 
 describe('registration', function() {
-
-  'use strict';
 
   var registrationService;
 
