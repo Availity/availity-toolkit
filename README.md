@@ -38,8 +38,17 @@ The Availity Toolkit combines several projects that simplify developing web appl
 * `git clone https://github.com/Availity/availity-toolkit`
 * `cd availity-toolkit`
 * `npm install` - install module dependencies
-* `av init` - CLI 
+* `/node_modules/.bin/av init` - CLI 
 * `gulp` - starts the development server on `http://localhost:3000`
+
+## GIT
+
+Before pushing up to Git repository
+
+* delete the `.git` folder
+* rename the project `availity-toolkit` to `{{your project name}}
+* `git init`
+* add Git remote url
 
 ## Upgrading
 
