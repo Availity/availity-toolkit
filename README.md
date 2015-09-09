@@ -4,7 +4,7 @@
 
 ## Table of Contents
 * [Requirements](#requirements)
-* [Intro](#intro)
+* [Features](#features)
 * [Folder Structure](#folder-structure)
 * [Getting Started](#getting-started)
 * [Authors](#authors)
@@ -18,27 +18,37 @@
 * [bower](http://bower.io/)  - `npm install -g bower`
 
 
-## Intro
+## Features
 
 The Availity Toolkit assembles several projects that make developing for web applications on Availity platform easier. These projects include:
 
-* [availtiy-angular](https://github.com/Availity/availity-angular) - Client side web framework
-* [avality-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
-* [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by Boostrap 3'ish 
-* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable tasks and workflows for web development using Gulp, Karma and Webpack.
+* [availity-angular](https://github.com/Availity/availity-angular) -  Client side web framework using [Angular 1.2.28](https://github.com/angular/angular.js/tree/v1.2.28)
+* [availity-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
+* [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by Boostrap 3'ish :neckbeard:
+* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable task and workflow modules that leverages:
+    * [Gulp](http://gulpjs.com/)
+    * [Karma](http://karma-runner.github.io/0.13/index.html) with [Jasmine](http://jasmine.github.io/2.0/introduction.html) integration
+    * [Webpack](https://webpack.github.io/)
+    * [Less](http://lesscss.org/)
+* icon fonts
+
 
 ## Getting Started
 
-* `git clone ttps://github.com/Availity/availity-toolkit`
+* `git clone https://github.com/Availity/availity-toolkit`
 * `cd availity-toolkit`
-* `npm install`
-* `av init` - runs the cli
+* `npm install` - install module dependencies
+* `av init` - CLI 
+* `gulp` - starts the development server on `http://localhost:3000`
 
 ## Upgrading
 
-> Run the following commands to upgrade some of the core libs throughout the application development lifecyle
+Upgrading Availity bower modules:
 
 * `bower install availity-uikit availity-angular --save`
+
+Upgrading the workflow:
+
 * `npm install availity-workflow --save-dev`
 
 
@@ -103,6 +113,10 @@ We encourage you to organize your project using feature folders and dashes **`-`
 
 **Kasey Powers**
 + [kasey.powers@availity.com](kasey.powers@availity.com)
+
+## Disclaimer
+
+Open source software components distributed or made available in the Availity Materials are licensed to Company under the terms of the applicable open source license agreements, which may be found in text files included in the Availity Materials.
 
 ## License
 
