@@ -20,12 +20,12 @@
 
 ## Intro
 
-The Availity Toolkit assembles several Availity projects that make developing for web applications on Availity platform easier. These projects include:
+The Availity Toolkit assembles several projects that make developing for web applications on Availity platform easier. These projects include:
 
 * [availtiy-angular](https://github.com/Availity/availity-angular) - Client side web framework
 * [avality-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
-* [availity-uikit](https://github.com/Availity/availity-uikit) - 
-* [availity-workflow](https://github.com/Availity/availity-workflow)
+* [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by Boostrap 3'ish 
+* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable tasks and workflows for web development using Gulp, Karma and Webpack.
 
 ## Getting Started
 
@@ -101,6 +101,11 @@ We encourage you to organize your project using feature folders and dashes **`-`
 **Robert Warner**
 + [rob.warner@availity.com](rob.warner@availity.com)
 
+**Kasey Powers**
++ [kasey.powers@availity.com](kasey.powers@availity.com)
+
 ## License
 
-Copyright (c) 2015 Availity, LLC
+Copyright (c) 2015 Availity, LLC. Code released under the [the MIT license](LICENSE)
+
+
