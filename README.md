@@ -20,11 +20,11 @@
 
 ## Features
 
-The Availity Toolkit assembles several projects that make developing for web applications on Availity platform easier. These projects include:
+The Availity Toolkit combines several projects that simplify developing web applications on Availity platform. These projects include:
 
-* [availity-angular](https://github.com/Availity/availity-angular) -  Client side web framework using [Angular 1.2.28](https://github.com/angular/angular.js/tree/v1.2.28)
+* [availity-angular](https://github.com/Availity/availity-angular) -  Client side web framework using [Angular 1.2.28](https://github.com/angular/angular.js/tree/v1.2.28) :neckbeard:
 * [availity-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
-* [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by Boostrap 3'ish :neckbeard:
+* [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by [Boostrap 3'ish](http://getbootstrap.com/)
 * [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable task and workflow modules that leverages:
     * [Gulp](http://gulpjs.com/)
     * [Karma](http://karma-runner.github.io/0.13/index.html) with [Jasmine](http://jasmine.github.io/2.0/introduction.html) integration
@@ -50,6 +50,16 @@ Upgrading Availity bower modules:
 Upgrading the workflow:
 
 * `npm install availity-workflow --save-dev`
+
+## Gulp
+
+A `gulpfile.js` is included your project and has been seeded with the following tasks:
+
+* `gulp` - starts the development server on `http://localhost:3000`
+* `gulp test` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/).  
+* `gulp test:server` - equivalent to the `gulp test` command but the Karma server continuously runs so that unit tests can be debugged.
+* `gulp lint` - checks for stylistic and programming errors using [ESLint](http://eslint.org/).  Two [.eslintrc](.eslintrc)/[.eslintrc](project/app/.eslintrc) files are included in your project using the Availity javascript standards.  The `.eslintrc` file in the **projec/app** folder is configured for web development and ES3 support.
+* `gulp test:server` - 
 
 
 ## Folder Structure
