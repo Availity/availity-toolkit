@@ -46,7 +46,7 @@ The Availity Toolkit combines several projects that simplify developing web appl
 Before pushing up to Git repository
 
 * delete the `.git` folder
-* rename the project `availity-toolkit` to `{{your project name}}
+* rename the project `availity-toolkit` to `{{your project name}}`
 * `git init`
 * add Git remote url
 
