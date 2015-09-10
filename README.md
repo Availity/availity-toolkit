@@ -68,7 +68,7 @@ Upgrading the Toolkit workflow:
 
 ## Troubleshooting
 
-* Git blocked by firewall 
+* Git protocol blocked by firewall 
     * `git config --global url."https://".insteadOf git://`
 
 ## Gulp
