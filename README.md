@@ -5,8 +5,10 @@
 ## Table of Contents
 * [Requirements](#requirements)
 * [Features](#features)
-* [Folder Structure](#folder-structure)
 * [Getting Started](#getting-started)
+* [Git](#git)
+* [Troubleshooting](#Troubleshooting)
+* [Best Practices](#best-practices)
 * [Authors](#authors)
 * [License](#license)
 
@@ -25,7 +27,7 @@ The Availity Toolkit combines several projects that simplify developing web appl
 * [availity-angular](https://github.com/Availity/availity-angular) -  Client side web framework using [Angular 1.2.28](https://github.com/angular/angular.js/tree/v1.2.28) :neckbeard:
 * [availity-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
 * [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by [Boostrap 3'ish](http://getbootstrap.com/)
-* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable task and workflow modules that leverages:
+* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable task and workflow modules that leverage:
     * [Gulp](http://gulpjs.com/)
     * [Karma](http://karma-runner.github.io/0.13/index.html) with [Jasmine](http://jasmine.github.io/2.0/introduction.html) integration
     * [Webpack](https://webpack.github.io/)
@@ -43,12 +45,19 @@ The Availity Toolkit combines several projects that simplify developing web appl
 
 ## GIT
 
-Before pushing up to Git repository
+Before pushing to Git repository:
 
-* delete the `.git` folder
 * rename the project `availity-toolkit` to `{{your project name}}`
+* cd into `{{your project name}}`
+* delete the `.git` folder else you will contain `availity-toolkit` history inside your project
 * `git init`
 * add Git remote url
+* git push to your Git repo
+
+## Troubleshooting
+
+* Git blocked by firewall 
+    * `git config --global url."https://".insteadOf git://`
 
 ## Upgrading
 
@@ -56,7 +65,7 @@ Upgrading Availity bower modules:
 
 * `bower install availity-uikit availity-angular --save`
 
-Upgrading the workflow:
+Upgrading the Toolkit workflow:
 
 * `npm install availity-workflow --save-dev`
 
@@ -65,13 +74,12 @@ Upgrading the workflow:
 A `gulpfile.js` is included your project and has been seeded with the following tasks:
 
 * `gulp` - starts the development server on `http://localhost:3000`
-* `gulp test` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/).  
+* `gulp test` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
 * `gulp test:server` - equivalent to the `gulp test` command but the Karma server continuously runs so that unit tests can be debugged.
 * `gulp lint` - checks for stylistic and programming errors using [ESLint](http://eslint.org/).  Two [.eslintrc](.eslintrc)/[.eslintrc](project/app/.eslintrc) files are included in your project using the Availity javascript standards.  The `.eslintrc` file in the **projec/app** folder is configured for web development and ES3 support.
-* `gulp test:server` - 
 
 
-## Folder Structure
+## Best Practices
 
 We encourage you to organize your project using feature folders and dashes **`-`** within file names for readability.
 
