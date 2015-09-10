@@ -7,7 +7,9 @@
 * [Features](#features)
 * [Getting Started](#getting-started)
 * [Git](#git)
-* [Troubleshooting](#Troubleshooting)
+* [Upgrading](#upgrading)
+* [Gulp](#gulp)
+* [Troubleshooting](#troubleshooting)
 * [Best Practices](#best-practices)
 * [Authors](#authors)
 * [License](#license)
@@ -43,7 +45,7 @@ The Availity Toolkit combines several projects that simplify developing web appl
 * `/node_modules/.bin/av init` - CLI 
 * `gulp` - starts the development server on `http://localhost:3000`
 
-## GIT
+## Git
 
 Before pushing to Git repository:
 
@@ -51,13 +53,8 @@ Before pushing to Git repository:
 * cd into `{{your project name}}`
 * delete the `.git` folder else you will contain `availity-toolkit` history inside your project
 * `git init`
-* add Git remote url
-* git push to your Git repo
-
-## Troubleshooting
-
-* Git blocked by firewall 
-    * `git config --global url."https://".insteadOf git://`
+* `git remote add origin ssh://{{some git url}}.git` 
+* `git push` to your Git repo
 
 ## Upgrading
 
@@ -68,6 +65,11 @@ Upgrading Availity bower modules:
 Upgrading the Toolkit workflow:
 
 * `npm install availity-workflow --save-dev`
+
+## Troubleshooting
+
+* Git blocked by firewall 
+    * `git config --global url."https://".insteadOf git://`
 
 ## Gulp
 
