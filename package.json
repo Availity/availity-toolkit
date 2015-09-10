@@ -8,10 +8,12 @@
     "node": ">=0.10.x"
   },
   "license": "MIT",
+
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:Availity/availity-toolkit.git"
   },
+
   "authors": [
     {
       "name": "Robert McGuinness",
@@ -26,10 +28,12 @@
       "email": "Kasey.Powers@availity.com"
     }
   ],
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install"
   },
+
   "devDependencies": {
     "gulp": "^3.9.0",
     "availity-workflow": "1.0.0"
