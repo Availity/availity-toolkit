@@ -24,7 +24,7 @@
 
 ## Features
 
-The Availity Toolkit combines several projects that simplify developing web applications on Availity platform. These projects include:
+The Toolkit combines several projects that simplify developing web applications on Availity platform. These projects include:
 
 * [availity-angular](https://github.com/Availity/availity-angular) -  Client side web framework using [Angular 1.2.28](https://github.com/angular/angular.js/tree/v1.2.28) :neckbeard:
 * [availity-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
