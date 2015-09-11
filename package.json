@@ -36,6 +36,6 @@
 
   "devDependencies": {
     "gulp": "^3.9.0",
-    "availity-workflow": "1.0.0"
+    "availity-workflow": "1.0.1"
   }
 }
