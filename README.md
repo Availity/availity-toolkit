@@ -1,225 +1,135 @@
 # availity-toolkit
 
-> Toolkit for Angular apps on the Availity platform.
-
-[![Join the chat at https://gitter.im/Availity/availity-toolkit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Availity/availity-toolkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+> Starter project for Angular apps on the Availity platform.
 
 ## Table of Contents
-* [Intro](#intro)
-* [Folder Structure](#folder-structure)
-* [Working with the Toolkit](#working-with-the-toolkit)
+* [Requirements](#requirements)
+* [Features](#features)
+* [Getting Started](#getting-started)
+* [Git](#git)
+* [Upgrading](#upgrading)
+* [Gulp](#gulp)
+* [Troubleshooting](#troubleshooting)
+* [Best Practices](#best-practices)
 * [Authors](#authors)
 * [License](#license)
 
+## Requirements
 
-## Intro
-The Availity Toolkit assembles several Availity projects that make developing for the Availity platform easier. These projects include:
-
-* [Availity Angular SDK](https://github.com/Availity/availity-angular)
-* [Availity Ekko](https://github.com/Availity/availity-ekko)
-* [Availity UIKit](https://github.com/Availity/availity-uikit)
-
-Follow the above links to see more information about each project.
+* [node.js](https://nodejs.org/download/) - `brew install node` _(mac)_
+* [git](http://git-scm.com/downloads) - `brew install git` _(mac)_
+* [gulp](http://gulpjs.com/)  - `npm install -g gulp`
+* [bower](http://bower.io/)  - `npm install -g bower`
 
 
-## Folder Structure
-##### Folder Structure
+## Features
 
-We encourage you to organize your project files by feature.
+The Toolkit combines several projects that simplify developing web applications on Availity platform. These projects include:
 
-
-###### Good
-
-```
-├── orders/
-|   ├── tests/
-|   |   └──orders-directive-spec.js
-|   |   └──orders-service-spec.js
-|   ├── templates/
-|   |   └──orders-template.html
-|   ├── orders-directive.js
-|   ├── orders-controller.js
-|   └── orders-service.js
-├── users/
-|   ├── tests/
-|   |   └──users-directive-spec.js
-|   |   └──users-service-spec.js
-|   ├── templates/
-|   |   └──users-template.html
-│   ├── users-directive.js
-│   ├── users-controller.js
-|   └── order-service.js
-├── home/
-|   ├── templates/
-│   |    └── home-template.html
-|   ├── home-controller.js
-```
-
-###### Bad
-
-```
-js/
-├── controllers/
-│   ├── homeController.js
-│   └──loginController.js
-├── directives/
-│   ├── usersDirective.js
-│   └──ordersDirective.js
-├── services/
-│   ├── userService.js
-│   ├── orderService.js
-│   └──loginService.js
-│partials/
-│   ├── home.html
-│   └── login.html
-```
+* [availity-angular](https://github.com/Availity/availity-angular) -  Client side web framework using [Angular 1.2.28](https://github.com/angular/angular.js/tree/v1.2.28) :neckbeard:
+* [availity-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
+* [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by [Boostrap 3'ish](http://getbootstrap.com/)
+* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable task and workflow modules that leverage:
+    * [Gulp](http://gulpjs.com/)
+    * [Karma](http://karma-runner.github.io/0.13/index.html) with [Jasmine](http://jasmine.github.io/2.0/introduction.html) integration
+    * [Webpack](https://webpack.github.io/)
+    * [Less](http://lesscss.org/)
+* icon fonts
 
 
-## Working with the Toolkit
-The Availity Toolkit uses [Gulp](http://gulpjs.com) to automate your workflow. You should have installed Gulp when you installed [Availity Command-line (CLI)](https://github.com/Availity/availity-cli). You can verify by opening a terminal or command prompt and typing:
+## Getting Started
 
->
-```sh
-availity doctor
-```
+* `git clone https://github.com/Availity/availity-toolkit`
+* `cd availity-toolkit`
+* `npm install` - install module dependencies
+* `/node_modules/.bin/av init` - CLI 
+* `gulp` - starts the development server on `http://localhost:3000`
 
-You should see output like this:
+## Git
 
->
-```sh
-Checking for bower . . . OK
-Checking for gulp . . . OK
-Checking for git . . . OK
-```
+Before pushing to Git repository:
 
-If you don't see "OK" for each line in the output, please install the required tools before proceeding with the Availity Toolkit.
+* rename the project `availity-toolkit` to `{{your project name}}`
+* cd into `{{your project name}}`
+* delete the `.git` folder else you will contain `availity-toolkit` history inside your project
+* `git init`
+* `git remote add origin ssh://{{some git url}}.git` 
+* `git push` to your Git repo
 
-#### Gulp Commands
+## Upgrading
 
-To use gulp, you type (in a terminal or command prompt) `gulp` and then the name of the task you wish to run. If you want to run a task named "foo" for example, you would type:
+Upgrading Availity bower modules:
 
->
-```sh
-gulp foo
-```
+* `bower install availity-uikit availity-angular --save`
 
-If you don't specify a task, a task named "default" will run. This is normally how you will use Gulp.
+Upgrading the Toolkit workflow:
 
->
-```sh
-gulp
-```
+* `npm install availity-workflow --save-dev`
 
-See below for all the available tasks and what they do.
+## Troubleshooting
 
-##### Default
+* Git protocol blocked by firewall 
+    * `git config --global url."https://".insteadOf git://`
 
->
-```sh
-gulp
+## Gulp
+
+A `gulpfile.js` is included your project and has been seeded with the following tasks:
+
+* `gulp` - starts the development server on `http://localhost:3000`
+* `gulp test` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
+* `gulp test:server` - equivalent to the `gulp test` command but the Karma server continuously runs so that unit tests can be debugged.
+* `gulp lint` - checks for stylistic and programming errors using [ESLint](http://eslint.org/).  Two [.eslintrc](.eslintrc)/[.eslintrc](project/app/.eslintrc) files are included in your project using the Availity javascript standards.  The `.eslintrc` file in the **projec/app** folder is configured for web development and ES3 support.
+
+
+## Best Practices
+
+We encourage you to organize your project using feature folders and dashes **`-`** within file names for readability.
+
+##### Good
+
+```bash
+├── project
+|    ├── app/
+|    |    ├── orders/
+|    |    |   ├── tests/
+|    |    |   |   └──orders-directive-spec.js
+|    |    |   |   └──orders-service-spec.js
+|    |    |   ├── templates/
+|    |    |   |   └──orders-template.html
+|    |    |   ├── orders-directive.js
+|    |    |   ├── orders-controller.js
+|    |    |   └── orders-service.js
+|    |    ├── users/
+|    |    |   ├── tests/
+|    |    |   |   └──users-directive-spec.js
+|    |    |   |   └──users-service-spec.js
+|    |    |   ├── templates/
+|    |    |   |   └──users-template.html
+|    |    │   ├── users-directive.js
+|    |    │   ├── users-controller.js
+|    |    |   └── order-service.js
+|    |    ├── index.js
+|    |    ├── vendor.js
+|    |    ├── module.js
+|    |    ├── index.html
 ```
 
+##### Bad
 
-Runs the default task, which runs these tasks:
-* less
-* build
-* copy
-* server:sync
-* watch
-
-##### Build
-
->
-```sh
-gulp build
+```bash
+├── project
+│    ├── app/
+│    │    ├── controllers/
+│    │    │   ├── homeController.js
+│    │    │   └──loginController.js
+│    │    ├── directives/
+│    │    │   ├── usersDirective.js
+│    │    │   └──ordersDirective.js
+│    │    ├── services/
+│    │    │   ├── userService.js
+│    │    │   ├── orderService.js
+│    │    │   └── loginService.js
 ```
-
-Builds your latest code for development.
-
-
-##### Dist
-
->
-```sh
-gulp dist
-```
-
-Packages your code for distribution.
-
-Pulls down the latest Availity configuration files from the Availity Git repository.
-
-##### Less
-
->
-```sh
-gulp less
-```
-
-Compiles your Less code to CSS.
-
-##### Lint
-
->
-```sh
-gulp lint
-```
-
-The term "lint" applies to software that reviews your source code for issues; see http://en.wikipedia.org/wiki/Lint_%28software%29 for more information. This task reviews your JavaScript code using the rules specified in `.jshintrc`, `.jshintignore`, and `jscsrc`. 
-
-
-##### Publish
-
->
-```sh
-gulp publish
-```
-
-Publishes code to the NPM and Bower repositories. 
-
-##### Readme
-
->
-```sh
-gulp readme
-```
-
-Creates this README file.
-
-##### Rest Server
-
->
-```sh
-gulp server:rest
-```
-
-Starts the Availity Ekko server, which is a REST mock server that the Availity Ekko module provides.
-
-##### Server Sync
-
->
-```sh
-gulp server:sync
-```
-
-Synchronizes your browser with any code changes you make (as soon as you save them). When you have this task set to automatically run (as the default task does), you will see your code changes automatically reflected in your browser without switching to your browser and reloading the page.
-
-##### Watch
-
->
-```sh
-gulp watch
-```
-
-Watches the code on your file system for any changes and triggers the necessary tasks for your code changes to synchronize to your browser. Note that this command continues to watch until you stop it by pressing Control+C.
-
-##### Deploy
-
->
-```sh
-gulp deploy
-```
-
-Deploys the built assets to a location specified under deploy.dest in [config.js](workflow/config.js) 
 
 
 ## Authors
@@ -230,9 +140,15 @@ Deploys the built assets to a location specified under deploy.dest in [config.js
 **Robert Warner**
 + [rob.warner@availity.com](rob.warner@availity.com)
 
-**Ricardo Rossi**
-+ [ricardo.rossi@availity.com](ricardo.rossi@availity.com)
+**Kasey Powers**
++ [kasey.powers@availity.com](kasey.powers@availity.com)
 
+## Disclaimer
+
+Open source software components distributed or made available in the Availity Materials are licensed to Company under the terms of the applicable open source license agreements, which may be found in text files included in the Availity Materials.
 
 ## License
-Copyright (c) 2015 Availity, LLC
+
+Copyright (c) 2015 Availity, LLC. Code released under the [the MIT license](LICENSE)
+
+
