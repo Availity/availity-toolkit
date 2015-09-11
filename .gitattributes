@@ -9,5 +9,7 @@
 *.svg   text eol=lf
 *.yml   text eol=lf
 *.hbs   text eol=lf
+*.sh    text eol=lf
+*.txt   text eol=lf
 *.jshintrc     text eol=lf
 *.jshintignore text eol=lf

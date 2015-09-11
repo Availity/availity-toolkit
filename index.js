@@ -1,8 +1,8 @@
-
 var Ekko = require('availity-ekko');
 
-var env = require('./workflow/env');
-env.load();
+var developerConfig = require('./project/config/developer-config');
 
 var ekko = new Ekko();
-ekko.start(env.options());
+ekko.start(developerConfig);
+
+
