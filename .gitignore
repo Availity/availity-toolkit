@@ -8,6 +8,5 @@
 /reports/
 /build/
 /css/
-workflow/webpack/stats.json
 /deploy/
 npm-debug.log
