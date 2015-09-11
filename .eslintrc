@@ -169,7 +169,7 @@ rules:
   no-native-reassign: 2
 
   # http://eslint.org/docs/rules/no-new
-  no-new: 2
+  no-new: 0
 
   # http://eslint.org/docs/rules/no-new-func
   no-new-func: 2
