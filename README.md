@@ -79,6 +79,7 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 * `gulp test` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
 * `gulp test:server` - equivalent to the `gulp test` command but the Karma server continuously runs so that unit tests can be debugged.
 * `gulp lint` - checks for stylistic and programming errors using [ESLint](http://eslint.org/).  Two [.eslintrc](.eslintrc)/[.eslintrc](project/app/.eslintrc) files are included in your project using the Availity javascript standards.  The `.eslintrc` file in the **projec/app** folder is configured for web development and ES3 support.
+* `env NODE_ENV=production gulp release` - bundles and versions the toolkit project into the `./dist` folder
 
 
 ## Best Practices
