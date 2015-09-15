@@ -17,9 +17,11 @@
 ## Requirements
 
 * [node.js](https://nodejs.org/download/) - `brew install node` _(mac)_
+* [node-gyp](https://github.com/nodejs/node-gyp) - is a cross-platform command-line tool for compiling native addon modules for Node.js.  Please review your [system requirements](https://github.com/nodejs/node-gyp#installation) for Node to function properly.
 * [git](http://git-scm.com/downloads) - `brew install git` _(mac)_
 * [gulp](http://gulpjs.com/)  - `npm install -g gulp`
 * [bower](http://bower.io/)  - `npm install -g bower`
+
 
 
 ## Features
@@ -70,6 +72,9 @@ Upgrading the Toolkit workflow:
 
 * Git protocol blocked by firewall 
     * `git config --global url."https://".insteadOf git://`
+* Windows installation issues
+    * Please review your [node-gyp system requirements](https://github.com/nodejs/node-gyp#installation) for Node to function properly.
+
 
 ## Gulp
 
