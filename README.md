@@ -43,6 +43,8 @@ The Toolkit combines several projects that simplify developing web applications 
 
 * `git clone https://github.com/Availity/availity-toolkit`
 * `cd availity-toolkit`
+* `npm install availity-workflow --save-dev`
+* `bower install availity-uikit availity-angular --save`
 * `npm install` - install module dependencies
 * `/node_modules/.bin/av init` - CLI 
 * `gulp` - starts the development server on `http://localhost:3000`
@@ -66,7 +68,7 @@ Upgrading Availity bower modules:
 
 Upgrading the Toolkit workflow:
 
-* `npm install availity-workflow --save-dev`
+
 
 ## Troubleshooting
 
