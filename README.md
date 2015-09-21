@@ -17,7 +17,7 @@
 ## Requirements
 
 * [node.js](https://nodejs.org/download/) - `brew install node` _(mac)_
-* [node-gyp](https://github.com/nodejs/node-gyp) - is a cross-platform command-line tool for compiling native addon modules for Node.js.  Please review your [system requirements](https://github.com/nodejs/node-gyp#installation) for Node to function properly.
+* [node-gyp](https://github.com/nodejs/node-gyp) - is a cross-platform command-line tool for compiling native add-on modules for Node.js.  Please review your [system requirements](https://github.com/nodejs/node-gyp#installation) for Node to function properly.
 * [git](http://git-scm.com/downloads) - `brew install git` _(mac)_
 * [gulp](http://gulpjs.com/)  - `npm install -g gulp`
 * [bower](http://bower.io/)  - `npm install -g bower`
@@ -86,8 +86,9 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 * `gulp` - starts the development server on `http://localhost:3000`
 * `gulp test` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
 * `gulp test:server` - equivalent to the `gulp test` command but the Karma server continuously runs so that unit tests can be debugged.
-* `gulp lint` - checks for stylistic and programming errors using [ESLint](http://eslint.org/).  Two [.eslintrc](.eslintrc)/[.eslintrc](project/app/.eslintrc) files are included in your project using the Availity javascript standards.  The `.eslintrc` file in the **projec/app** folder is configured for web development and ES3 support.
-* `env NODE_ENV=production gulp release` - bundles and versions the toolkit project into the `./dist` folder
+* `gulp lint` - checks for stylistic and programming errors using [ESLint](http://eslint.org/).  Two [.eslintrc](.eslintrc)/[.eslintrc](project/app/.eslintrc) files are included in your project using the [Availity Shared ESLint](https://github.com/Availity/eslint-config-availity) standards .  The `.eslintrc` file in the **projec/app** folder is configured for web development and ES3 support.
+* `NODE_ENV=production gulp release` - bundles and versions the toolkit project into the `./dist` folder
+* `NODE_ENV=staging gulp release` - bundles the toolkit project with cache busting into the `./build` folder
 
 
 ## Best Practices
