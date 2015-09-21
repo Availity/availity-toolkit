@@ -11,12 +11,7 @@
 #     Rules that have proven to be useful, please follow them.
 #
 
-env:
-  browser: true
-  commonjs: true
-
-rules:
-
-  strict: [2, global]
-
-  global-strict: 0
+# https://github.com/Availity/eslint-config-availity/browser
+extends: eslint-config-availity/browser
+globals:
+  APP_VERSION: true
