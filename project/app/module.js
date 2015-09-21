@@ -8,8 +8,9 @@ window.APP_VERSION = APP_VERSION;
 
 // Allow services, factories, etc. to add dependencies
 // asynchronously
-app.addModules = function(modules) {
+app.addModules = function(_modules) {
 
+  var modules = _modules;
   if (!_.isArray(modules)) {
     modules = [modules];
   }

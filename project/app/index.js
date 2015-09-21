@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 'use strict';
 
 require('./index.less');
@@ -27,10 +28,11 @@ app.controller('PageController', function($scope, AvModal, AV_GLOBALS) {
     states: AV_GLOBALS.REGIONS,
     onShow: function() {
       new AvModal({
-        show: true,
         scope: $scope,
-        templateUrl: 'registration/templates/notification.html'
+        templateUrl: 'registration/templates/notification.html',
+        show: true
       });
+
     }
   };
 
