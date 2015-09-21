@@ -63,13 +63,19 @@ Before pushing to Git repository:
 
 ## Upgrading
 
-Upgrading Availity bower modules:
+Always check the release logs for changes
 
-* `bower install availity-uikit availity-angular --save`
+* https://github.com/Availity/availity-workflow/releases
+* https://github.com/Availity/availity-uikit/releases
+* https://github.com/Availity/availity-angular/releases
 
-Upgrading the Toolkit workflow:
+Upgrading Availity bower modules
 
+>`bower install availity-uikit availity-angular --save`
 
+Upgrading the Toolkit workflow
+
+>`npm install availity-workflow --save-dev`
 
 ## Troubleshooting
 
@@ -77,6 +83,8 @@ Upgrading the Toolkit workflow:
     * `git config --global url."https://".insteadOf git://`
 * Windows installation issues
     * Please review your [node-gyp system requirements](https://github.com/nodejs/node-gyp#installation) for Node to function properly.
+* `EADDRNOTAVAIL`  
+    * Change bind address from `0.0.0.0` to `127.0.0.1` or `localhost` for your [web server](https://github.com/Availity/availity-toolkit/blob/master/project/config/developer-config-example.js#L14) configuration
 
 
 ## Gulp
@@ -96,6 +104,7 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 We encourage you to organize your project using feature folders and dashes **`-`** within file names for readability.
 
 ##### Good
+
 
 ```bash
 ├── project
