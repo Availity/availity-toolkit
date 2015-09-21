@@ -41,23 +41,24 @@ The Toolkit combines several projects that simplify developing web applications 
 
 ## Getting Started
 
-* `git clone https://github.com/Availity/availity-toolkit`
-* `cd availity-toolkit`
+* `git clone https://github.com/Availity/availity-toolkit {{your-project-name}}`
+* `cd {{your-project-name}}`
 * `npm install availity-workflow --save-dev`
 * `bower install availity-uikit availity-angular --save`
 * `npm install` - install module dependencies
-* `/node_modules/.bin/av init` - CLI 
-* `gulp` - starts the development server on `http://localhost:3000`
+* `/node_modules/.bin/av init` 
+    * runs the interal CLI tool for project initialization by updating the package.json, bower.json and availity.json meta info.
+* `gulp` 
+    * starts the development server on `http://localhost:3000`
 
 ## Git
 
 Before pushing to Git repository:
 
-* rename the project `availity-toolkit` to `{{your project name}}`
-* cd into `{{your project name}}`
+* cd into `{{your-project-name}}`
 * delete the `.git` folder else you will contain `availity-toolkit` history inside your project
 * `git init`
-* `git remote add origin ssh://{{some git url}}.git` 
+* `git remote add origin ssh://{{your-git-url}}.git` 
 * `git push` to your Git repo
 
 ## Upgrading
