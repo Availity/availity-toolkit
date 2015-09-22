@@ -22,8 +22,6 @@
 * [gulp](http://gulpjs.com/)  - `npm install -g gulp`
 * [bower](http://bower.io/)  - `npm install -g bower`
 
-
-
 ## Features
 
 The Toolkit combines several projects that simplify developing web applications on Availity platform. These projects include:
