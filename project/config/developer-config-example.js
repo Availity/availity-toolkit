@@ -11,11 +11,11 @@ var developerConfig = {
 
     servers: {
       web: {
-        host: '0.0.0.0',
+        host: '127.0.0.1',
         port: 9999
       },
       app: {
-        host: '0.0.0.0',
+        host: '127.0.0.1',
         port: 3000
       },
       api: {
@@ -91,7 +91,7 @@ var developerConfig = {
 
     servers: {
       web: {
-        host: '0.0.0.0',
+        host: '127.0.0.1',
         port: 9999
       }
     }
