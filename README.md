@@ -96,6 +96,10 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 * `NODE_ENV=production gulp release` - bundles and versions the toolkit project into the `./dist` folder
 * `NODE_ENV=staging gulp release` - bundles the toolkit project with cache busting into the `./build` folder
 
+## CLI
+
+* `/node_modules/.bin/av --help`
+
 
 ## Best Practices
 
