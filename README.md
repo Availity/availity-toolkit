@@ -44,8 +44,9 @@ The Toolkit combines several projects that simplify developing web applications 
 * `npm install availity-workflow --save-dev`
 * `bower install availity-uikit availity-angular --save`
 * `npm install` - install module dependencies
-* `/node_modules/.bin/av init` 
-    * runs the interal CLI tool for project initialization by updating the package.json, bower.json and availity.json meta info.
+* run the CLI for project initialization by updating the `package.json`, `bower.json` and `availity.json` meta info.
+    * **Windows:** `\node_modules\.bin\av init` 
+    * **Mac:** `./node_modules/.bin/av init` 
 * `gulp` 
     * starts the development server on `http://localhost:3000`
 
