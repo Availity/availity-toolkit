@@ -1,7 +1,7 @@
 {
   "name": "availity-toolkit",
   "version": "1.0.0",
-  "avVersion": "1.0.4",
+  "avVersion": "1.0.5",
   "description": "Toolkit for Angular apps on the Availity platform.",
   "private": true,
   "author": "Robert McGuinness <rob.mcguinness@availity.com>",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "availity-workflow": "^1.2.0",
+    "eslint": "1.5.1",
     "eslint-config-availity": "^1.0.1",
     "gulp": "^3.9.0"
   }
