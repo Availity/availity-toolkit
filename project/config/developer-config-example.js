@@ -74,7 +74,11 @@ var developerConfig = {
       legacyWeb: {
         proxy: true,
         port: 8080,
-        context: '/availity'
+        proxies: [
+          {
+            context: '/availity'
+          }
+        ]
       }
     }
   },
