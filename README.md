@@ -82,7 +82,7 @@ Upgrading the Toolkit workflow
     * `git config --global url."https://".insteadOf git://`
 * Windows installation issues
     * Please review your [node-gyp system requirements](https://github.com/nodejs/node-gyp#installation) for Node to function properly.
-* `EADDRNOTAVAIL`  
+* `EADDRNOTAVAIL` or `ERR_CONNECTION_CLOSED`
     * Change bind address from `0.0.0.0` to `127.0.0.1` or `localhost` for your [web server](https://github.com/Availity/availity-toolkit/blob/master/project/config/developer-config-example.js#L14) configuration
 
 
