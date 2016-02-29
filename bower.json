@@ -1,6 +1,6 @@
 {
   "name": "availity-toolkit",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Toolkit for Angular apps on the Availity platform.",
   "license": "MIT",
   "dependencies": {
