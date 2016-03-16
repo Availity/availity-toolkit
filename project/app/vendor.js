@@ -9,7 +9,6 @@ require('velocity');
 require('moment');
 require('bootstrap-datepicker');
 require('jquery.inputmask');
-require('blueimp-file-upload');
 
 // utils
 require('lodash');
@@ -20,7 +19,6 @@ require('angular');
 require('angular-sanitize');
 require('angular-ui-router');
 require('angular-shims-placeholder');
-require('blueimp-file-upload-angular');
 
 // availity
 require('availity-angular');
