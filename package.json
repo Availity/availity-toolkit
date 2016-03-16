@@ -1,7 +1,7 @@
 {
   "name": "availity-toolkit",
   "version": "1.0.0",
-  "avVersion": "1.0.6",
+  "avVersion": "1.0.7",
   "description": "Toolkit for Angular apps on the Availity platform.",
   "private": true,
   "author": "Robert McGuinness <rob.mcguinness@availity.com>",
@@ -28,13 +28,17 @@
     }
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install"
+    "start": "gulp av:default",
+    "tests": "gulp av:test",
+    "production": "cross-env NODE_ENV=production gulp av:release",
+    "staging": "cross-env NODE_ENV=staging gulp av:release",
+    "integration": "cross-env NODE_ENV=integration gulp av:release"
   },
   "devDependencies": {
-    "availity-workflow": "^1.2.0",
+    "availity-workflow": "^1.2.6",
+    "cross-env": "1.0.7",
     "eslint": "1.5.1",
     "eslint-config-availity": "^1.0.1",
-    "gulp": "^3.9.0"
+    "gulp": "3.9.1"
   }
 }

@@ -15,7 +15,6 @@ app.addModules([
   'availity.ui',
   'availity.ui.templates',
   'ui.router',
-  'blueimp.fileupload',
   'ng.shims.placeholder'
 ]);
 
