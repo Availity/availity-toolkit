@@ -28,11 +28,11 @@
     }
   ],
   "scripts": {
-    "start": "gulp server",
-    "test": "gulp test",
-    "production": "cross-env NODE_ENV=production gulp release",
-    "staging": "cross-env NODE_ENV=staging gulp release",
-    "integration": "cross-env NODE_ENV=integration gulp release"
+    "start": "gulp av:default",
+    "test": "gulp av:test",
+    "production": "cross-env NODE_ENV=production gulp av:release",
+    "staging": "cross-env NODE_ENV=staging gulp av:release",
+    "integration": "cross-env NODE_ENV=integration gulp av:release"
   },
   "devDependencies": {
     "availity-workflow": "1.2.6-beta.3",
