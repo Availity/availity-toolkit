@@ -3,6 +3,7 @@
 > Starter project for Angular apps on the Availity platform.
 
 ## Table of Contents
+
 * [Requirements](#requirements)
 * [Features](#features)
 * [Getting Started](#getting-started)
@@ -35,6 +36,9 @@ The Toolkit combines several projects that simplify developing web applications 
     * [Webpack](https://webpack.github.io/)
     * [Less](http://lesscss.org/)
 * [Fontello Fonts](http://fontello.com/)
+
+## Notice
+
 
 
 ## Getting Started
@@ -102,7 +106,6 @@ Upgrading the Toolkit workflow
     * Please review your [node-gyp system requirements](https://github.com/nodejs/node-gyp#installation) for Node to function properly.
 * `EADDRNOTAVAIL` or `ERR_CONNECTION_CLOSED`
     * Change bind address from `0.0.0.0` to `127.0.0.1` or `localhost` for your [web server](https://github.com/Availity/availity-toolkit/blob/master/project/config/developer-config-example.js#L14) configuration
-
 
 ## Gulp
 
@@ -192,6 +195,6 @@ Open source software components distributed or made available in the Availity Ma
 
 ## License
 
-Copyright (c) 2015 Availity, LLC. Code released under the [the MIT license](LICENSE)
+Copyright (c) 2016 Availity, LLC. Code released under the [the MIT license](LICENSE)
 
 
