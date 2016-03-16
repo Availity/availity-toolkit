@@ -34,7 +34,7 @@ The Toolkit combines several projects that simplify developing web applications 
     * [Karma](http://karma-runner.github.io/0.13/index.html) with [Jasmine](http://jasmine.github.io/2.0/introduction.html) integration
     * [Webpack](https://webpack.github.io/)
     * [Less](http://lesscss.org/)
-* icon fonts
+* [Fontello Fonts](http://fontello.com/)
 
 
 ## Getting Started
@@ -59,6 +59,24 @@ Before pushing to Git repository:
 * `git init`
 * `git remote add origin ssh://{{your-git-url}}.git` 
 * `git push` to your Git repo
+
+## Releasing
+
+* `npm start production`
+    - run interactive cli 
+    - minifies bundles
+    - cache bust bundles
+    - tags bundle in git
+    - bundles are stored in `./dist` folder
+* `npm start staging`
+    - run interactive cli     
+    - cache bust bundles
+    - tags bundle in git
+    - bundles are stored in `./dist` folder
+* `npm start integration`
+    - run interactive cli     
+    - cache bust bundles
+    - bundles are stored in `./build` folder
 
 ## Upgrading
 
@@ -94,8 +112,11 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 * `gulp test` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
 * `gulp test:server` - equivalent to the `gulp test` command but the Karma server continuously runs so that unit tests can be debugged.
 * `gulp lint` - checks for stylistic and programming errors using [ESLint](http://eslint.org/).  Two [.eslintrc](.eslintrc)/[.eslintrc](project/app/.eslintrc) files are included in your project using the [Availity Shared ESLint](https://github.com/Availity/eslint-config-availity) standards .  The `.eslintrc` file in the **projec/app** folder is configured for web development and ES3 support.
-* `NODE_ENV=production gulp release` - bundles and versions the toolkit project into the `./dist` folder
-* `NODE_ENV=staging gulp release` - bundles the toolkit project with cache busting into the `./build` folder
+
+## NPM
+
+* `npm start` - starts the development server on `http://localhost:3000`
+* `npm run tests` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
 
 ## CLI
 
