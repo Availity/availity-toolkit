@@ -35,7 +35,7 @@
     "integration": "cross-env NODE_ENV=integration gulp av:release"
   },
   "devDependencies": {
-    "availity-workflow": "^1.2.6",
+    "availity-workflow": "1.2.7",
     "cross-env": "1.0.7",
     "eslint": "1.5.1",
     "eslint-config-availity": "^1.0.1",
