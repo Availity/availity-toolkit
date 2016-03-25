@@ -10,6 +10,7 @@
 * [Git](#git)
 * [Upgrading](#upgrading)
 * [Gulp](#gulp)
+* [NPM Scripts](#npm)
 * [Troubleshooting](#troubleshooting)
 * [Best Practices](#best-practices)
 * [Authors](#authors)
@@ -36,10 +37,6 @@ The Toolkit combines several projects that simplify developing web applications 
     * [Webpack](https://webpack.github.io/)
     * [Less](http://lesscss.org/)
 * [Fontello Fonts](http://fontello.com/)
-
-## Notice
-
-
 
 ## Getting Started
 
@@ -120,7 +117,10 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 
 * `npm start` - starts the development server on `http://localhost:3000`
 * `npm run tests` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
-
+* `npm start production` 
+* `npm start staging`
+* `npm start integration`
+* 
 ## CLI
 
 * `/node_modules/.bin/av --help`
