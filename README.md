@@ -63,18 +63,18 @@ Before pushing to Git repository:
 
 ## Releasing
 
-* `npm start production`
+* `npm run production`
     - run interactive cli 
     - minifies bundles
     - cache bust bundles
     - tags bundle in git
     - bundles are stored in `./dist` folder
-* `npm start staging`
+* `npm run staging`
     - run interactive cli     
     - cache bust bundles
     - tags bundle in git
     - bundles are stored in `./dist` folder
-* `npm start integration`
+* `npm run integration`
     - run interactive cli     
     - cache bust bundles
     - bundles are stored in `./build` folder
@@ -117,9 +117,9 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 
 * `npm start` - starts the development server on `http://localhost:3000`
 * `npm run tests` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
-* `npm start production` 
-* `npm start staging`
-* `npm start integration`
+* `npm run production` 
+* `npm run staging`
+* `npm run integration`
 * 
 ## CLI
 
