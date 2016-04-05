@@ -4,8 +4,8 @@
   "description": "Toolkit for Angular apps on the Availity platform.",
   "license": "MIT",
   "dependencies": {
-    "availity-angular": "~1.10.1",
-    "availity-uikit": "~1.1.0",
+    "availity-angular": "1.11.0",
+    "availity-uikit": "1.1.0",
     "html5shiv": "~3.7.2",
     "respond": "~1.4.2"
   },
