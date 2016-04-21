@@ -4,7 +4,7 @@ var developerConfig = {
 
   development: {
 
-    open: '/#',
+    open: '#',
 
     data: path.join(__dirname, '../data'),
     routes: path.join(__dirname, './routes.json'),
