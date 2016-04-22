@@ -1,6 +1,6 @@
 {
   "name": "availity-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "avVersion": "1.0.10",
   "description": "Toolkit for Angular apps on the Availity platform.",
   "private": true,
