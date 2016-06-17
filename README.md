@@ -8,10 +8,11 @@
 * [Features](#features)
 * [Getting Started](#getting-started)
 * [Git](#git)
+* [Releasing](#releasing)
 * [Upgrading](#upgrading)
-* [Gulp](#gulp)
-* [NPM Scripts](#npm)
 * [Troubleshooting](#troubleshooting)
+* [Gulp](#gulp)
+* [NPM](#npm)
 * [Best Practices](#best-practices)
 * [Authors](#authors)
 * [License](#license)
@@ -117,10 +118,11 @@ A `gulpfile.js` is included your project and has been seeded with the following 
 
 * `npm start` - starts the development server on `http://localhost:3000`
 * `npm run tests` - executes your spec files using the Karma test runner and [Phantom.js](http://phantomjs.org/)
-* `npm run production` 
-* `npm run staging`
-* `npm run integration`
-* 
+* `npm run production` - see [releasing](#releasing)
+* `npm run staging` - see [releasing](#releasing)
+* `npm run integration` - see [releasing](#releasing)
+* `npm run lint` - lint browser and node javascript files
+
 ## CLI
 
 * `/node_modules/.bin/av --help`
