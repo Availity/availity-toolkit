@@ -30,6 +30,7 @@
   "scripts": {
     "start": "gulp av:default",
     "tests": "gulp av:test",
+    "lint": "gulp lint",
     "production": "cross-env NODE_ENV=production gulp av:release",
     "staging": "cross-env NODE_ENV=staging gulp av:release",
     "integration": "cross-env NODE_ENV=integration gulp av:release"
