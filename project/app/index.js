@@ -1,4 +1,3 @@
-/* eslint-disable no-new */
 'use strict';
 
 require('./index.less');
@@ -26,7 +25,7 @@ app.controller('PageController', function($scope, AvModal, AV_GLOBALS) {
     date: null,
     states: AV_GLOBALS.REGIONS,
     onShow: function() {
-      new AvModal({
+      AvModal.create({
         scope: $scope,
         templateUrl: 'registration/templates/notification.html',
         show: true
@@ -71,12 +70,12 @@ app.config(function($stateProvider, $urlRouterProvider, avValProvider) {
 
   $stateProvider
     .state('registration', {
-      url: '/registration',
+      url: '/',
       template: registration.TEMPLATES.PAGE,
       controller: 'PageController'
     });
 
-  $urlRouterProvider.otherwise('/registration');
+  $urlRouterProvider.otherwise('/');
 
 });
 
