@@ -13,3 +13,4 @@ workflow/webpack/stats.json
 project/config/developer-config.js
 
 npm-debug.log
+/.vscode
