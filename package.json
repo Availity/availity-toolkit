@@ -1,45 +1,63 @@
 {
-  "name": "availity-toolkit",
-  "version": "1.0.0",
-  "avVersion": "1.0.12",
-  "description": "Toolkit for Angular apps on the Availity platform.",
+  "name": "availity-angular-kit",
   "private": true,
-  "author": "Robert McGuinness <rob.mcguinness@availity.com>",
-  "engines": {
-    "node": ">=0.10.x"
+  "version": "2.0.0-rc.1",
+  "description": "Example Angular project using availity-workflow",
+  "main": "index.js",
+  "scripts": {
+    "start": "av start",
+    "test": "av test",
+    "test:debug": "av test --watch",
+    "lint": "av lint",
+    "help": "av help",
+    "build": "av release",
+    "production": "cross-env NODE_ENV=production av release",
+    "staging": "cross-env NODE_ENV=staging av release"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:Availity/availity-toolkit.git"
+    "url": "git+https://github.com/availity/availity-workflow.git"
   },
-  "authors": [
-    {
-      "name": "Robert McGuinness",
-      "email": "rob.mcguinness@availity.com"
-    },
-    {
-      "name": "Robert Warner",
-      "email": "rob.warner@availity.com"
-    },
-    {
-      "name": "Kasey Powers",
-      "email": "Kasey.Powers@availity.com"
-    }
+  "keywords": [
+    "angular",
+    "availity",
+    "workflow"
   ],
-  "scripts": {
-    "start": "gulp av:default",
-    "tests": "gulp av:test",
-    "lint": "gulp lint",
-    "production": "cross-env NODE_ENV=production gulp av:release",
-    "staging": "cross-env NODE_ENV=staging gulp av:release",
-    "integration": "cross-env NODE_ENV=integration gulp av:release"
+  "author": "Robert McGuinness",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/availity/availity-workflow/issues"
   },
+  "homepage": "https://github.com/availity/availity-workflow#readme",
   "devDependencies": {
-    "availity-workflow": "1.2.11",
-    "cross-env": "1.0.7",
-    "eslint": "1.5.1",
-    "eslint-config-availity": "^1.0.1",
-    "gulp": "3.9.1"
+    "availity-workflow": "^2.0.0-rc.1",
+    "availity-workflow-angular": "^2.0.0-rc.1",
+    "babel-eslint": "^7.1.1",
+    "cross-env": "^3.1.4",
+    "eslint": "^3.15.0",
+    "eslint-config-availity": "^2.0.0"
+  },
+  "availityWorkflow": {
+    "plugin": "availity-workflow-angular"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-animate": "^1.6.2",
+    "angular-mocks": "^1.6.2",
+    "angular-sanitize": "^1.6.2",
+    "angular-shims-placeholder": "^0.4.8",
+    "angular-ui-mask": "^1.8.7",
+    "angular-ui-router": "^0.4.2",
+    "angular-velocity": "^0.3.1",
+    "animate.css": "^3.5.2",
+    "availity-angular": "^2.0.0-beta.15",
+    "availity-uikit": "^2.0.2",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "lodash.merge": "^4.6.0",
+    "moment": "^2.17.1",
+    "select2": "^3.5.2-browserify",
+    "tracekit": "^0.4.4",
+    "velocity-animate": "^1.4.2"
   }
 }
