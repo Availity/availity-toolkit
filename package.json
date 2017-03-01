@@ -1,8 +1,9 @@
 {
-  "name": "availity-angular-kit",
+  "name": "availity-toolkit",
   "private": true,
-  "version": "2.0.0-rc.1",
-  "description": "Example Angular project using availity-workflow",
+  "version": "1.0.0",
+  "avVersion": "2.0.0",
+  "description": "Boilerplate Angular project using availity-workflow",
   "main": "index.js",
   "scripts": {
     "start": "av start",
@@ -23,7 +24,6 @@
     "availity",
     "workflow"
   ],
-  "author": "Robert McGuinness",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/availity/availity-workflow/issues"
