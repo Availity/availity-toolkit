@@ -1,14 +1,5 @@
 {
-  "v1/users/me": {
-    "file": "me.json"
-  },
-
-  "v1/permissions": {
-    "file": "permissions.json"
-  },
-
-  "v1/log-messages": {
-    "file": "empty.json"
+  "v1/proxy/healthplan/v1/authorizations": {
+    "file": "authorization.json"
   }
-
 }

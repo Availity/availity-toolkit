@@ -1,28 +1,18 @@
-'use strict';
-
-// jquery
-require('jquery');
-require('bootstrap');
-require('availity-uikit');
-require('select2');
-require('velocity');
-require('moment');
-require('bootstrap-datepicker');
-require('jquery.inputmask');
-
-// utils
-require('lodash');
-require('tracekit');
-
-// angular
-require('angular');
-require('angular-sanitize');
-require('angular-ui-router');
-require('angular-shims-placeholder');
-
-// availity
-require('availity-angular');
-
-// css
-require('angular/angular-csp.css');
+// Required 3rd party libraries
+import 'jquery';
+import 'bootstrap';
+import 'availity-uikit';
+import 'moment';
+import 'tracekit';
+import 'angular';
+import 'angular-sanitize';
+import 'angular-animate';
+import 'angular-ui-router';
+import 'availity-angular';
+import 'bootstrap-datepicker';
+import 'velocity-animate';
+import 'velocity-animate/velocity.ui';
+import 'select2';
+import 'angular-shims-placeholder';
+import 'angular-ui-mask';
 
