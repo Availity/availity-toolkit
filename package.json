@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/availity/availity-workflow#readme",
   "devDependencies": {
+    "angular-mocks": "^1.6.2",
     "availity-workflow": "^2.0.0-rc.4",
     "availity-workflow-angular": "^2.0.0-rc.4",
     "babel-eslint": "^7.1.1",
@@ -43,7 +44,6 @@
   "dependencies": {
     "angular": "^1.6.2",
     "angular-animate": "^1.6.2",
-    "angular-mocks": "^1.6.2",
     "angular-sanitize": "^1.6.2",
     "angular-shims-placeholder": "^0.4.8",
     "angular-ui-mask": "^1.8.7",
