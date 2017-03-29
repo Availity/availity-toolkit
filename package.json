@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/availity/availity-workflow.git"
+    "url": "git+https://github.com/availity/availity-toolkit.git"
   },
   "keywords": [
     "angular",
@@ -26,9 +26,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/availity/availity-workflow/issues"
+    "url": "https://github.com/availity/availity-toolkit/issues"
   },
-  "homepage": "https://github.com/availity/availity-workflow#readme",
+  "homepage": "https://github.com/availity/availity-toolkit#readme",
   "devDependencies": {
     "angular-mocks": "^1.6.2",
     "availity-workflow": "^2.0.0-rc.5",
