@@ -4,9 +4,15 @@
 
 ## Requirements
 
-* **`Node v6+`:** [https://nodejs.org/download/](https://nodejs.org/download/)
-* **`node-gyp`:** Review your operating system installation requirements @  [https://github.com/nodejs/node-gyp#installation](https://github.com/nodejs/node-gyp#installation)
-* **`git`:** Download latest version for your operating systems @ [http://git-scm.com/downloads](http://git-scm.com/downloads)
+### `Node v6+`
+[https://nodejs.org/download/](https://nodejs.org/download/)
+
+### `node-gyp`
+
+Review your operating system installation requirements @  [https://github.com/nodejs/node-gyp#installation](https://github.com/nodejs/node-gyp#installation)
+
+### `Git`
+Download latest version for your operating systems @ [http://git-scm.com/downloads](http://git-scm.com/downloads)
 
 ## Features
 
@@ -20,35 +26,20 @@ The Toolkit combines several projects that simplify developing web applications 
     * [Karma](http://karma-runner.github.io/0.13/index.html)
     * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
     * [Less](http://lesscss.org/)
+    * [SASS](https://github.com/sass/node-sass)
 
 ## CLI
 
 ```bash
 ❯ npm run help
-
-Usage: av <command> [options]
-
-Commands:
-  start    Start the development server
-  lint     Lint source files using ESLint
-  release  Bundle project for distribution (production, staging or integration)
-  test     Run your tests using Karma and Phantom.js
-  about    About availity-workflow
-
-Options:
-  -h, --help  Show help
-
-Examples:
-  av start
-  av lint
 ```
 
-**Command specific help**
+### Command specific help
 ```bash
 npm run help <command>
 ```
 
-**Example**
+#### Example
 ```
 ❯ npm run help lint
 
@@ -57,7 +48,7 @@ Options:
 -h, --help     Show help
 ```
 
-> Passing command ling arguements to the CLI requires `--` before the arguments else they won't get recognized when running through NPM.
+> NPM scripts require a `--` before CLI arguments else they won't get recognized by availity-workflow
 ```
 ❯ npm run lint -- --include=**/*.js
 ```
