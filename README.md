@@ -27,6 +27,17 @@ The Toolkit combines several projects that simplify developing web applications 
     * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
     * [Less](http://lesscss.org/)
     * [SASS](https://github.com/sass/node-sass)
+    
+## Getting Started
+
+* `git clone https://github.com/Availity/availity-toolkit {{your-project-name}}`
+* `cd {{your-project-name}}`
+*  Delete `.git` directory
+* `git remote add origin ssh://{{your-git-url}}.git`
+* `git init`
+* `npm init`
+* `npm install` - install module dependencies
+* `npm start`
 
 ## CLI
 
@@ -52,17 +63,6 @@ Options:
 ```
 ❯ npm run lint -- --include=**/*.js
 ```
-
-## Getting Started
-
-* `git clone https://github.com/Availity/availity-toolkit {{your-project-name}}`
-* `cd {{your-project-name}}`
-*  Delete `.git` directory
-* `git remote add origin ssh://{{your-git-url}}.git`
-* `git init`
-* `npm init`
-* `npm install` - install module dependencies
-* `npm start`
 
 ## Releasing
 
