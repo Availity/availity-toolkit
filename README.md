@@ -4,15 +4,9 @@
 
 ## Requirements
 
-### `Node v6+`
-[https://nodejs.org/download/](https://nodejs.org/download/)
-
-### `node-gyp`
-
-Review your operating system installation requirements @  [https://github.com/nodejs/node-gyp#installation](https://github.com/nodejs/node-gyp#installation)
-
-### `Git`
-Download latest version for your operating systems @ [http://git-scm.com/downloads](http://git-scm.com/downloads)
+* `Node v6+` - [https://nodejs.org/download/](https://nodejs.org/download/)
+* `node-gyp` - Review your operating system installation requirements @  [https://github.com/nodejs/node-gyp#installation](https://github.com/nodejs/node-gyp#installation)
+* `Git` - Download latest version for your operating systems @ [http://git-scm.com/downloads](http://git-scm.com/downloads)
 
 ## Features
 
@@ -21,12 +15,14 @@ The Toolkit combines several projects that simplify developing web applications 
 * [availity-angular](https://github.com/Availity/availity-angular) -  Client side web framework using [Angular 1.6+](https://github.com/angular/angular.js/tree/v1.2.28)
 * [availity-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
 * [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by [Boostrap 3 and cards from Bootstrap 4](http://getbootstrap.com/)
-* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable developer engine and workflow modules that leverages:
+* [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable CLI engine that leverages:
     * [Webpack 2](https://webpack.js.org/)
     * [Karma](http://karma-runner.github.io/0.13/index.html)
     * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
     * [Less](http://lesscss.org/)
     * [SASS](https://github.com/sass/node-sass)
+    
+> Please read the [availity-workflow READMDE.md](https://github.com/Availity/availity-workflow) to see a detailed list of features provided by our CLI engine
     
 ## Getting Started
 
