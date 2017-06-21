@@ -4,7 +4,7 @@ require('angular');
 require('angular-mocks');
 require('angular-sanitize');
 require('angular-animate');
-require('angular-ui-router');
+require('@uirouter/angularjs');
 require('availity-angular');
 require('angular-mocks');
 

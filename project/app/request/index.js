@@ -1,4 +1,4 @@
-import uiRouter from 'angular-ui-router';
+import uiRouter from '@uirouter/angularjs';
 import { availity } from 'availity-angular';
 import app from 'app-module';
 
