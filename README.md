@@ -80,19 +80,11 @@ Before pushing to Git repository:
 
 ## Upgrading
 
-Always check the release logs for changes
+Always check the release logs for changes. Upgrading without reading the changelog is not recommened. Upgrading major version is not recommened.
 
 * https://github.com/Availity/availity-workflow/releases
 * https://github.com/Availity/availity-uikit/releases
 * https://github.com/Availity/availity-angular/releases
-
-Upgrading Availity bower modules
-
->`bower install availity-uikit availity-angular --save`
-
-Upgrading the Toolkit workflow
-
->`npm install availity-workflow --save-dev`
 
 ## Troubleshooting
 
