@@ -43,8 +43,6 @@ The Toolkit combines several projects that simplify developing web applications 
 
 * `git clone https://github.com/Availity/availity-toolkit {{your-project-name}}`
 * `cd {{your-project-name}}`
-* `npm install availity-workflow --save-dev`
-* `bower install availity-uikit availity-angular --save`
 * `npm install` - install module dependencies
 * run the CLI for project initialization by updating the `package.json`, `bower.json` and `availity.json` meta info.
     * **Windows:** `node_modules\.bin\av init` 
