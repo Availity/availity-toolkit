@@ -16,7 +16,7 @@ The Toolkit combines several projects that simplify developing web applications 
 * [availity-ekko](https://github.com/Availity/availity-ekko) - Mock server for REST API simulation
 * [availity-uikit](https://github.com/Availity/availity-uikit) - HTML, CSS, and JS framework powered by [Boostrap 3 and cards from Bootstrap 4](http://getbootstrap.com/)
 * [availity-workflow](https://github.com/Availity/availity-workflow) - Upgradeable CLI engine that leverages:
-    * [Webpack 2](https://webpack.js.org/)
+    * [Webpack 3](https://webpack.js.org/)
     * [Karma](http://karma-runner.github.io/0.13/index.html)
     * [Jasmine](http://jasmine.github.io/2.0/introduction.html)
     * [Less](http://lesscss.org/)
