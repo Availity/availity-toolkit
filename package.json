@@ -9,6 +9,7 @@
     "start": "av start",
     "test": "av test",
     "test:debug": "av test --watch",
+    "test:coverage": "av test --coverage",
     "lint": "av lint",
     "help": "av help",
     "build": "av release",
@@ -31,8 +32,8 @@
   "homepage": "https://github.com/availity/availity-toolkit#readme",
   "devDependencies": {
     "angular-mocks": "^1.6.2",
-    "availity-workflow": "^2.0.0-rc.6",
-    "availity-workflow-angular": "^2.0.0-rc.6",
+    "availity-workflow": "^2.4.5",
+    "availity-workflow-angular": "^2.4.5",
     "babel-eslint": "^7.1.1",
     "cross-env": "^5.0.1",
     "eslint": "^3.18.0",
