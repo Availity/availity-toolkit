@@ -23,6 +23,10 @@ The Toolkit combines several projects that simplify developing web applications 
     * [SASS](https://github.com/sass/node-sass)
     
 > Please read the [availity-workflow READMDE.md](https://github.com/Availity/availity-workflow) to see a detailed list of features provided by our CLI engine
+
+## Upgrading from 1.x
+
+Please read the [upgrade docs](https://github.com/Availity/availity-toolkit/wiki/Upgrading-to-availity-angular-2.x-and-availity-workflow-2.x)
     
 ## Getting Started
 
