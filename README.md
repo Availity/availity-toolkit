@@ -4,7 +4,7 @@
 
 ## Requirements
 
-* `Node v6+` - [https://nodejs.org/download/](https://nodejs.org/download/)
+* `Node v8+` - [https://nodejs.org/download/](https://nodejs.org/download/)
 * `node-gyp` - Review your operating system installation requirements @  [https://github.com/nodejs/node-gyp#installation](https://github.com/nodejs/node-gyp#installation)
 * `Git` - Download latest version for your operating systems @ [http://git-scm.com/downloads](http://git-scm.com/downloads)
 
