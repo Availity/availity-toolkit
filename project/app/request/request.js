@@ -1,12 +1,16 @@
 import app from 'app-module';
 import { availity } from 'availity-angular';
 import uiRouter from '@uirouter/angularjs';
+import Upload from '@availity/upload-core';
 
 class Request {
-
-  constructor(avOrganizationsResource, avUsersResource, avProvidersResource, $state) {
-
-    this.di = { avOrganizationsResource, avUsersResource, avProvidersResource, $state };
+  constructor(avOrganizationsApi, avUsersApi, avProvidersApi, $state) {
+    this.di = {
+      avOrganizationsApi,
+      avUsersApi,
+      avProvidersApi,
+      $state,
+    };
 
     this.memberId = null;
     this.selectedOrganization = null;
@@ -17,25 +21,20 @@ class Request {
     this.dob = null;
     this.relationshipToSubscriber = null;
     this.acceptedAgreement = false;
-
+    this.uploads = [];
   }
 
   init() {
-    return this.getOrganizations().then(() => this);
+    return this.getOrganizations();
   }
 
   getUser() {
-
     const self = this;
 
-    return this.di.
-      avUsersResource
-        .me()
-        .then(user => {
-          // cache user
-          self.user = user;
-          return user;
-        });
+    return this.di.avUsersApi.me().then(user => {
+      self.user = user;
+      return user;
+    });
   }
 
   onSelectedOrganization(organization) {
@@ -51,69 +50,67 @@ class Request {
     return this.selectedOrganization === null;
   }
 
-  queryOrganizations() {
-
-    const self = this;
-
-    return this.di.avOrganizationsResource
-      .getOrganizations()
-      .then(organizations => {
-        // cache organizations
-        self.organizations = organizations;
-        return organizations;
-      });
-
-  }
-
   getOrganizations() {
-
-    // The :: syntax below is proposed for ES7.  It is equivalent to the following code:
-    //
-    //    this.getUser().then(this.queryOrganizations.bind(this));
-    //
-    // Feel free to use either version that suits your coding style.
-    //
-    return this.getUser()
-      .then(::this.queryOrganizations);
-
-  }
-
-  queryProviders(organization) {
-
-    return this.di.avProvidersResource
-      .getProviders(organization.customerId);
-
+    return this.di.avOrganizationsApi.getOrganizations().then(response => {
+      const { organizations = [] } = response.data;
+      this.organizations = organizations;
+      return organizations;
+    });
   }
 
   getProviders(organization) {
-
     const self = this;
 
-    return this.queryProviders(organization)
-      .then(providers => {
-        self.providers = providers;
+    const { normalize } = this.di.avProvidersApi;
+
+    return this.di.avProvidersApi
+      .getProviders(organization.customerId)
+      .then(response => {
+        const { providers = [] } = response.data;
+        self.providers = normalize(providers);
+
         return providers;
       });
   }
 
-  onSubmit(form) {
+  isAttachmentsDisabled() {
+    return this.selectedOrganization === null;
+  }
 
+  onAddAttachment = (scope, el) => {
+    const { files } = el;
+
+    if (!files[0]) {
+      return;
+    }
+
+    const upload = new Upload(files[0], {
+      bucketId: 'nYrlabBv',
+      customerId: this.selectedOrganization.customerId,
+      clientId: '2104aaaa-d42b-450c-b1bd-3f271dcccccc',
+    });
+    this.uploads.push(upload);
+    upload.start();
+  };
+
+  onRemoveAttachment = selectedUpload => {
+    selectedUpload.abort();
+    this.uploads = this.uploads.filter(
+      upload => upload.id !== selectedUpload.id
+    );
+  };
+
+  onSubmit(form) {
     if (form.$invalid) {
       return;
     }
 
     return this.di.$state.go('app.response', {
-      accepted: this.acceptedAgreement
+      accepted: this.acceptedAgreement,
     });
   }
-
 }
 
-app
-  .addModules([
-    availity,
-    uiRouter
-  ])
-  .service('request', Request);
+app.addModules([availity, uiRouter]).service('request', Request);
 
 export default app;

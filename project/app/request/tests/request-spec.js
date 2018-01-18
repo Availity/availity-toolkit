@@ -1,28 +1,26 @@
 /* global describe, it, beforeEach, inject, expect */
 import angular from 'angular';
+
 import { availity } from 'availity-angular';
+import '@uirouter/angularjs';
 import app from 'app-module';
 
 import '../request';
 
-describe('model', () => {
-
+describe('request', () => {
   let request;
 
   beforeEach(() => {
-    angular.mock.module(app.name, availity);
+    angular.mock.module(app.name, availity, uiRouter);
   });
 
-  beforeEach(inject((_request_) => {
-    request = _request_;
-  }));
+  beforeEach(
+    inject(_request_ => {
+      request = _request_;
+    })
+  );
 
-  describe('request', () => {
-
-    it('should exist', () => {
-      expect(request).toBeDefined();
-    });
-
+  it('should exist', () => {
+    expect(request).toBeDefined();
   });
-
 });

@@ -1,8 +1,9 @@
-<form class="form" name="requestForm" av-val-form="request">
+<form class="form" name="requestForm" av-val-form="requestRules">
   <div class="card">
     <div class="card-block">
       <provider-section></provider-section>
       <patient-section></patient-section>
+      <attachments-section></attachments-section>
       <agreement-section></agreement-section>
       <hr class="divider"/>
       <div class="form-controls form-controls-card">
@@ -11,7 +12,7 @@
           class="btn btn-default"
           ng-click="vm.request.onSubmit(requestForm)"
           ng-disabled="requestForm.$invalid">
-          Authorize
+          Cancel
         </button>
         <button
           type="submit"

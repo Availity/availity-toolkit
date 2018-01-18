@@ -1,21 +1,28 @@
 {
   "name": "availity-toolkit",
-  "private": true,
   "version": "1.0.0",
-  "avVersion": "2.0.0",
+  "avVersion": "3.0.0",
+  "private": true,
   "description": "Boilerplate Angular project using availity-workflow",
   "main": "index.js",
   "scripts": {
     "start": "av start",
+    "av": "av",
     "test": "av test",
-    "test:debug": "av test --watch",
+    "test:watch": "av test --watch",
     "test:coverage": "av test --coverage",
+    "test:integration": "av test --integration",
+    "about": "av about",
     "lint": "av lint",
     "help": "av help",
     "profile": "av profile",
-    "build": "av release",
+    "build": "av build",
+    "build:production": "cross-env NODE_ENV=production av build",
+    "build:staging": "cross-env NODE_ENV=staging av build",
+    "release": "av release",
     "production": "cross-env NODE_ENV=production av release",
-    "staging": "cross-env NODE_ENV=staging av release"
+    "staging": "cross-env NODE_ENV=staging av release",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -28,38 +35,65 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/availity/availity-toolkit/issues"
+    "url": "https://github.com/availity/availity-workflow/issues"
   },
-  "homepage": "https://github.com/availity/availity-toolkit#readme",
-  "devDependencies": {
-    "angular-mocks": "^1.6.2",
-    "availity-workflow": "^2.6.3",
-    "availity-workflow-angular": "^2.6.3",
-    "babel-eslint": "^7.1.1",
-    "cross-env": "^5.0.1",
-    "eslint": "^3.18.0",
-    "eslint-config-availity": "^2.0.0"
-  },
-  "availityWorkflow": {
-    "plugin": "availity-workflow-angular"
-  },
+  "homepage": "https://github.com/availity/availity-workflow#readme",
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.10",
-    "angular": "^1.6.2",
-    "angular-animate": "^1.6.2",
-    "angular-sanitize": "^1.6.2",
+    "@availity/api-angular": "^1.0.0-alpha.17",
+    "@availity/api-core": "^1.0.0-alpha.17",
+    "@availity/localstorage-core": "^1.0.0-alpha.17",
+    "@availity/upload-core": "^1.0.0-alpha.17",
+    "@uirouter/angularjs": "^1.0.0",
+    "angular": "^1.6.7",
+    "angular-animate": "^1.6.7",
+    "angular-mocks": "^1.6.7",
+    "angular-sanitize": "^1.6.7",
     "angular-shims-placeholder": "^0.4.8",
     "angular-ui-mask": "^1.8.7",
     "angular-velocity": "^0.3.1",
     "animate.css": "^3.5.2",
-    "availity-angular": "^2.0.8",
-    "availity-uikit": "^2.1.2",
+    "availity-angular": "^2.2.0",
+    "availity-uikit": "^2.2.0",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1",
+    "bootstrap-datepicker": "^1.7.1",
+    "jquery": "^3.2.1",
     "lodash.merge": "^4.6.0",
-    "moment": "^2.19.1",
+    "moment": "^2.20.1",
     "select2": "^3.5.2-browserify",
     "tracekit": "^0.4.4",
-    "velocity-animate": "^1.4.2"
+    "tus-js-client": "^1.4.5",
+    "velocity-animate": "^1.5.0"
+  },
+  "devDependencies": {
+    "availity-workflow": "^3.1.0",
+    "availity-workflow-angular": "^3.1.0",
+    "babel-eslint": "^8.0.3",
+    "cross-env": "^5.0.4",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-availity": "^3.0.0-beta.10",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "husky": "^0.14.3",
+    "lerna": "^2.5.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.10.2"
+  },
+  "availityWorkflow": {
+    "plugin": "availity-workflow-angular"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier",
+      "git add"
+    ]
   }
 }
